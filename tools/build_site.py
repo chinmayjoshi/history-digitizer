@@ -58,6 +58,18 @@ THEME_ICONS = {
     "The Decline": "⌛",
 }
 
+COLOR_THEMES = {
+    "Origins & Legends": "origins",
+    "Rise of Empires": "rise",
+    "Battles & Raids": "battles",
+    "Rulers of Uncommon Fate": "rulers",
+    "The Decline": "decline",
+}
+
+
+def theme_cls(theme: str) -> str:
+    return COLOR_THEMES.get(theme, "rise")
+
 
 # ---------------------------------------------------------------- transcripts
 
@@ -568,13 +580,12 @@ def landing_story_cards(stories):
     order = sorted(stories, key=lambda s: s["slug"])
     for s in order:
         theme = s.get("theme", "Rise of Empires")
-        cls = "theme-" + "-".join(theme.lower().split()).replace("&", "")
         cards.append(f"""
-<div class="story {cls}">
-  <span class="tag">{THEME_ICONS.get(s['theme'], '✧')} {html.escape(s['theme'])}</span>
+<div class="story {theme_cls(theme)}">
+  <span class="tag">{THEME_ICONS.get(theme, '✧')} {html.escape(theme)}</span>
   <h3><a href="story-{html.escape(s['slug'])}.html">{html.escape(s['title'])}</a></h3>
   <p>{html.escape(s.get('hook',''))}</p>
-  <div class="meta">{len(s.get('panels',[]))} panels · {html.escape(s.get('pages',''))}</div>
+  <div class="meta"><a href="story-{html.escape(s['slug'])}.html">Read the story →</a> · {len(s.get('panels',[]))} panels · {html.escape(s.get('pages',''))}</div>
 </div>""")
     return "".join(cards)
 
@@ -670,13 +681,12 @@ def build_stories(site_dir, book, stories):
         cards = ""
         for s in items:
             cards += f"""
-<div class="story theme-{"-".join(th.lower().split()).replace('&','')}">
+<div class="story {theme_cls(th)}">
   <span class="tag">{icon} {html.escape(th)}</span>
-  <h3>{html.escape(s['title'])}</h3>
+  <h3><a href="story-{html.escape(s['slug'])}.html">{html.escape(s['title'])}</a></h3>
   <p>{html.escape(s.get('hook',''))}</p>
-  <p>{s['summary_html']}</p>
   <div class="meta">{len(s.get('panels',[]))} panels · {html.escape(s.get('pages',''))}</div>
-  <p><a class="btn ghost" style="display:inline-block;padding:8px 14px;font-size:.82rem" href="story-{html.escape(s['slug'])}.html">Read the story →</a></p>
+  <p style="margin-top:10px"><a class="btn ghost" style="display:inline-block;padding:8px 14px;font-size:.82rem" href="story-{html.escape(s['slug'])}.html">Read the story →</a></p>
 </div>"""
         sections.append(f"""
 <div class="section-head"><span class="orn">{icon}</span><h2>{html.escape(th)}</h2></div>
@@ -719,7 +729,7 @@ def build_stories(site_dir, book, stories):
   <div class="section-head"><span class="orn">❦</span><h2>{html.escape(s['title'])}</h2></div>
   <p class="lead">{html.escape(s.get('hook',''))}</p>
 </section>
-<div class="card"><p>{s['summary_html']}</p>
+<div class="card">{s['summary_html']}
 <p style="margin-top:12px;color:var(--muted)"><b>Figures:</b> {html.escape(', '.join(s.get('figures',[])))}</p></div>
 <section class="block"><div class="section-head"><span class="orn">✧</span><h2>The story as a comic</h2></div>
 <div class="comic">{panels}</div></section>
