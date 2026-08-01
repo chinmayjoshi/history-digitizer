@@ -1,0 +1,50 @@
+{
+  "slug": "history-of-hindostan",
+  "title": "The History of Hindostan, from the Earliest Account of Time, to the Death of Akbar",
+  "subtitle": "Translated from the Persian of Mahummud Casim Ferishta of Delhi; With a Dissertation Concerning the Religion and Philosophy of the Brahmins, and an Appendix Containing the History of the Mogul Empire",
+  "author": "Alexander Dow",
+  "translator": "Alexander Dow",
+  "original_language": "Persian (Ferishta)",
+  "source_book": "History of Hindostan, from the Earliest Account of Time, to the Death of Akbar",
+  "year_copyright": "1768",
+  "publisher": "T. Becket and P. A. De Hondt, London",
+  "collection": "Digital Library of India",
+  "source_library": "Digital Library of India",
+  "catalogue_nid": "3071808",
+  "accession_no": "E01768",
+  "pdf_pathl": "/sites/default/files/dspace_pdfs/History-Of-Hindostan--Vol-1.pdf",
+  "pdf_url": "https://icvtestingold.nvli.in/sites/default/files/dspace_pdfs/History-Of-Hindostan--Vol-1.pdf",
+  "pdf_pages": 464,
+  "cover_image": "work/pages/page_0000.png",
+  "frontmatter": {
+    "dissertation": "A Dissertation concerning the customs, manners, language, religion, and philosophy of the Hindoos (p. xxi)"
+  },
+  "sections": [
+    {"part": "I", "part_title": "The History of the Hindoos, before the first invasion of Hindostan by the Mahomedans", "printed_start": 1, "sections": 17},
+    {"part": "II", "part_title": "The History of the Empire of Ghizni", "printed_start": 34, "sections": 19},
+    {"part": "III", "part_title": "The History of the Empire of Delhi, from the accession of Cuttub to the invasion of Timur", "printed_start": 164, "sections": 22}
+  ],
+  "pages": [],
+  "plates": [
+    {
+      "scan_page": 6,
+      "printed_page": "",
+      "description": "Full-page engraved frontispiece portrait of the Mughal emperor Shah Alam II ('Shaw Allum') enthroned on an ornate open-sided throne or howdah-like seat, shaded by a parasol (chhatri). An attendant stands before him holding a tall fly-whisk (chowry). The throne rests on a platform covered with dense floral scrollwork; foliage and distant trees appear behind, with birds in a cloudy sky. Caption below identifies the sitter, with the engraver's signature 'J. Taylor sculp' at lower right and a note 'From an Original Painting' at lower left.",
+      "image": "work/plates/plate_0006.png"
+    },
+    {
+      "scan_page": 45,
+      "printed_page": "",
+      "description": "Engraved plate (Plate XXX) in two parts: the upper part gives specimens of the measure (metre) of the four Bedas (Vedas) \u2014 Rugh, Sheam, Judjer, and Otar bah \u2014 each with four lines of Devanagari verse and an italic romanized transliteration; the lower part shows 'The Shanscrita Alphabet', two rows of Devanagari characters labelled with roman letter names, with an explanatory note on consonants and vowels and an example row of the letter K with the various vowel marks.",
+      "image": "work/plates/plate_0045.png"
+    },
+    {
+      "scan_page": 94,
+      "printed_page": "",
+      "description": "A fold-out engraved general map of Hindostan (the Indian subcontinent) and adjacent countries, showing regional labels such as GUZERAT (with Cambay, Surat, Diu), MALVA, DELHI, AGRA, DECCAN, BENGAL, and ORIXA (Orissa), the Gulf of Cambay and Bay of Bengal, the Andaman and Maldive islands, and an island south of the peninsula (Ceylon) with places like Colombo; includes a scale bar marked MILES.",
+      "image": "work/plates/plate_0094.png"
+    }
+  ],
+  "stories": [],
+  "glossary": {}
+}
