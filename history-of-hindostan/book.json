@@ -20,9 +20,24 @@
     "dissertation": "A Dissertation concerning the customs, manners, language, religion, and philosophy of the Hindoos (p. xxi)"
   },
   "sections": [
-    {"part": "I", "part_title": "The History of the Hindoos, before the first invasion of Hindostan by the Mahomedans", "printed_start": 1, "sections": 17},
-    {"part": "II", "part_title": "The History of the Empire of Ghizni", "printed_start": 34, "sections": 19},
-    {"part": "III", "part_title": "The History of the Empire of Delhi, from the accession of Cuttub to the invasion of Timur", "printed_start": 164, "sections": 22}
+    {
+      "part": "I",
+      "part_title": "The History of the Hindoos, before the first invasion of Hindostan by the Mahomedans",
+      "printed_start": 1,
+      "sections": 17
+    },
+    {
+      "part": "II",
+      "part_title": "The History of the Empire of Ghizni",
+      "printed_start": 34,
+      "sections": 19
+    },
+    {
+      "part": "III",
+      "part_title": "The History of the Empire of Delhi, from the accession of Cuttub to the invasion of Timur",
+      "printed_start": 164,
+      "sections": 22
+    }
   ],
   "pages": [],
   "plates": [
