@@ -2,33 +2,88 @@
   "slug": "two-kings-one-city",
   "title": "Two Kings, One City — the Empire Crumbles Before Timur",
   "pages": "printed pp. 361–364 (scans 455–458) — the final pages of Vol. I",
-  "figures": ["Sultan Mamood", "Nuserit Shaw", "Eckbal (Iqbal) Chan", "Muckirrib Chan", "Pir Mahummud, grandson of Timur", "Amir Timur (Tamerlane)"],
+  "figures": [
+    "Sultan Mamood",
+    "Nuserit Shaw",
+    "Eckbal (Iqbal) Chan",
+    "Muckirrib Chan",
+    "Pir Mahummud, grandson of Timur",
+    "Amir Timur (Tamerlane)"
+  ],
   "summary": "The last pages of the volume are a portrait of an empire eating itself. After the death of Firose Shaw's line weakened, faction set up two rival sultans — Mamood in old Delhi and Nuserit Shaw in Firose-abad — 'and, a thing unheard of before, two Kings in arms against one another resided in one capital.' For three years the capital fought itself: 'It was not a state of war, but a continued battle between the two cities. Thousands were killed almost every day, and the place of the slain was constantly supplied by reinforcements.' The provincial governors simply stood aside, withholding revenues, waiting to pick up independent kingdoms from the wreckage. In the north-west the first Tatar blow fell: Pir Mahummud, grandson of Amir Timur, bridged the Indus, drowned an army in the Bea river, and took Multan after six months. At Delhi, the book gives us one of its great villains: 'the peculiarly perfidious' Eckbal Chan — who deserted one king, swore friendship with the other upon the Koran at a saint's tomb, broke the oath within three days to rob him of elephants, treasure and baggage, then murdered his rival minister Muckirrib in his own house, and finally seized the young Sultan himself, leaving him 'nothing but his life and the name of Emperor.' And then, with the empire prostrate, comes the last sentence of the volume — 'to compleat the miseries of the unhappy city and empire, news arrived that Amir Timur had crossed the Sind, with an intention to conquer Hindostan. END of the first Volume.'",
   "why": "This is how the book chooses to end — not with a battle but with a held breath. The Delhi that Tamerlane is about to annihilate (1398) is shown already destroying itself: two kings in one city, an oath-breaker kingmaker, and governors waiting like crows. Reading the final line in the original page, with 'END of the first Volume' directly beneath it, is a genuinely chilling moment.",
   "panels": [
-    {"scene": "Delhi split in two: barricades across a street, two royal standards flying over two palaces.",
-     "dialogue": [{"speaker": "Chronicler (caption)", "text": "A thing unheard of before: two Kings in arms against one another, resident in one capital."}],
-     "caption": "1393: the empire of Delhi puts two rival sultans into one city — and the city goes to war with itself."},
-    {"scene": "A street battle that never ends: fresh troops marching in over the fallen.",
-     "dialogue": [],
-     "caption": "Three years of it. 'Thousands were killed almost every day, and the place of the slain was constantly supplied by reinforcements.'"},
-    {"scene": "Provincial governors on distant balconies, watching, holding back their revenue chests.",
-     "dialogue": [{"speaker": "A Suba", "text": "Let it burn. We shall each be kings of the ashes."}],
-     "caption": "The governors withhold tribute and wait — each hoping the wreckage makes him independent."},
-    {"scene": "The Indus: a bridge of boats; Tatar horsemen pouring across under a black banner.",
-     "dialogue": [{"speaker": "Scout", "text": "Timur's grandson has bridged the Sind!"}],
-     "caption": "The first blow from the north-west: Pir Mahummud, grandson of Tamerlane, crosses the Indus."},
-    {"scene": "The river Bea: an ambushed army driven back into the stream, horses and men drowning.",
-     "dialogue": [],
-     "caption": "He falls on the relieving army mid-crossing — 'more were drowned than fell by the sword.' Multan falls after six months."},
-    {"scene": "A saint's tomb: Eckbal Chan and Nuserit Shaw swearing on the Koran; three days later the same Eckbal robbing his sworn friend.",
-     "dialogue": [{"speaker": "Eckbal Chan", "text": "Upon the Koran — friendship eternal. (three days later) Take his elephants, treasure, everything."}],
-     "caption": "The book's perfect villain: 'peculiarly perfidious' Eckbal, for whom a sacred oath lasts three days."},
-    {"scene": "Night: Muckirrib Chan's own house; assassins at the door; then the young Sultan Mamood seized in his palace.",
-     "dialogue": [{"speaker": "Chronicler (caption)", "text": "He left him nothing but his life and the name of Emperor."}],
-     "caption": "Treaty after treaty broken: murder in a private house, and a sultan reduced to a breathing title."},
-    {"scene": "The walls of exhausted Delhi; a dust-covered rider entering the gate; in the far north, a horizon of horsemen.",
-     "dialogue": [{"speaker": "The messenger", "text": "Amir Timur has crossed the Sind — he comes to conquer Hindostan."}],
-     "caption": "'To compleat the miseries of the unhappy city and empire…' — END of the first Volume."}
-  ]
+    {
+      "scene": "Delhi split in two: barricades across a street, two royal standards flying over two palaces.",
+      "dialogue": [
+        {
+          "speaker": "Chronicler (caption)",
+          "text": "A thing unheard of before: two Kings in arms against one another, resident in one capital."
+        }
+      ],
+      "caption": "1393: the empire of Delhi puts two rival sultans into one city — and the city goes to war with itself."
+    },
+    {
+      "scene": "A street battle that never ends: fresh troops marching in over the fallen.",
+      "dialogue": [],
+      "caption": "Three years of it. 'Thousands were killed almost every day, and the place of the slain was constantly supplied by reinforcements.'"
+    },
+    {
+      "scene": "Provincial governors on distant balconies, watching, holding back their revenue chests.",
+      "dialogue": [
+        {
+          "speaker": "A Suba",
+          "text": "Let it burn. We shall each be kings of the ashes."
+        }
+      ],
+      "caption": "The governors withhold tribute and wait — each hoping the wreckage makes him independent."
+    },
+    {
+      "scene": "The Indus: a bridge of boats; Tatar horsemen pouring across under a black banner.",
+      "dialogue": [
+        {
+          "speaker": "Scout",
+          "text": "Timur's grandson has bridged the Sind!"
+        }
+      ],
+      "caption": "The first blow from the north-west: Pir Mahummud, grandson of Tamerlane, crosses the Indus."
+    },
+    {
+      "scene": "The river Bea: an ambushed army driven back into the stream, horses and men drowning.",
+      "dialogue": [],
+      "caption": "He falls on the relieving army mid-crossing — 'more were drowned than fell by the sword.' Multan falls after six months."
+    },
+    {
+      "scene": "A saint's tomb: Eckbal Chan and Nuserit Shaw swearing on the Koran; three days later the same Eckbal robbing his sworn friend.",
+      "dialogue": [
+        {
+          "speaker": "Eckbal Chan",
+          "text": "Upon the Koran — friendship eternal. (three days later) Take his elephants, treasure, everything."
+        }
+      ],
+      "caption": "The book's perfect villain: 'peculiarly perfidious' Eckbal, for whom a sacred oath lasts three days."
+    },
+    {
+      "scene": "Night: Muckirrib Chan's own house; assassins at the door; then the young Sultan Mamood seized in his palace.",
+      "dialogue": [
+        {
+          "speaker": "Chronicler (caption)",
+          "text": "He left him nothing but his life and the name of Emperor."
+        }
+      ],
+      "caption": "Treaty after treaty broken: murder in a private house, and a sultan reduced to a breathing title."
+    },
+    {
+      "scene": "The walls of exhausted Delhi; a dust-covered rider entering the gate; in the far north, a horizon of horsemen.",
+      "dialogue": [
+        {
+          "speaker": "The messenger",
+          "text": "Amir Timur has crossed the Sind — he comes to conquer Hindostan."
+        }
+      ],
+      "caption": "'To compleat the miseries of the unhappy city and empire…' — END of the first Volume."
+    }
+  ],
+  "theme": "The Decline",
+  "hook": "Two sultans warring inside a single capital for three years, as Tamerlane's shadow fell across the Indus."
 }

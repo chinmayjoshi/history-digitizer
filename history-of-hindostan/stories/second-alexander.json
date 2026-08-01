@@ -2,36 +2,107 @@
   "slug": "second-alexander",
   "title": "The Second Alexander — Gold from a Sling",
   "pages": "printed pp. 255–257 (scans 349–351)",
-  "figures": ["Alla ul dien (Alauddin Khilji)", "Sultan Jellal ul dien Firose (his uncle)", "Malleke Jehan", "Ruckun ul dien", "Arkilli Chan"],
+  "figures": [
+    "Alla ul dien (Alauddin Khilji)",
+    "Sultan Jellal ul dien Firose (his uncle)",
+    "Malleke Jehan",
+    "Ruckun ul dien",
+    "Arkilli Chan"
+  ],
   "summary": "1295. Alla ul dien had already secured his path to power the darkest way: his own uncle and benefactor, Sultan Jellal ul dien Firose, was murdered by his conspirators — men who, the chronicler notes, were afterwards driven mad, one crying out incessantly that the dead Sultan was cutting off his head. At Delhi the Queen regent Malleke Jehan raised her younger son to the throne, bypassing the true heir Arkilli Chan, who waited at Multan. Alla ul dien abandoned his Bengal expedition and marched on the capital — in the rainy season — buying loyalty as he went: 'wherever he encamped he amused himself with throwing gold from a sling among the people,' until 'a world of soldiers' gathered under his banners. Summoned home, Arkilli Chan answered with fatal clarity: 'The stream might have been diverted at its source; but when it became a river, no dams could oppose it.' The boy-sultan paraded his army before the walls, lost half of it to desertion that same night, and fled with his mother and treasure. Delhi's citizens crowded out to greet the usurper. He struck coin in his name, ascended the throne in the red palace, and drowned the memory of his crime in festivals — 'He who ought to have been hooted with detestation became the object of admiration to those who could not see the darkness of his deeds through the splendor of his magnificence.' Then, with six months' pay advanced to his army, he sent forty thousand horse to Multan to extirpate the race of the uncle he had murdered. Thus began the reign called Secunder Sani — 'the Second Alexander.'",
   "why": "Alauddin Khilji would become the most powerful of the Delhi Sultans — the man who threw back the Mongols and took an empire's economy in his own hands. But the book shows how it started: a murdered uncle, a rain-season march, and gold slung into crowds like seed. The historian's verdict on the crowds who cheered him is one of the sharpest sentences in the whole volume.",
   "panels": [
-    {"scene": "A riverside pavilion: assassins strike down the old Sultan Jellal ul dien as he greets his nephew.",
-     "dialogue": [{"speaker": "Chronicler (caption)", "text": "The nephew he raised repaid him thus."}],
-     "caption": "The road to the throne began with the murder of his own uncle and benefactor."},
-    {"scene": "A madman in rags clawing at his own face in the dark.",
-     "dialogue": [{"speaker": "The assassin Achtiar Hoor", "text": "He is cutting off my head! The Sultan is cutting off my head!"}],
-     "caption": "The killers found no advancement: one went mad, suffering 'a thousand deaths in imagination' before he died."},
-    {"scene": "Delhi palace: the Queen mother crowns her younger son; courtiers exchange uneasy looks.",
-     "dialogue": [{"speaker": "Malleke Jehan", "text": "The diadem goes to my boy. The provinces to our friends."}],
-     "caption": "With the murderer still on the road, the Queen regent crowns the wrong prince."},
-    {"scene": "A rain-lashed road: horsemen marching; at the roadside the general slings handfuls of gold into a cheering crowd.",
-     "dialogue": [{"speaker": "Alla ul dien", "text": "Let it rain gold. Soldiers follow gold."}],
-     "caption": "Marching in the monsoon, he flings gold from a sling among the people — 'a world of soldiers' joins him."},
-    {"scene": "Multan terrace: Prince Arkilli Chan reading his mother's summons, waving it away.",
-     "dialogue": [{"speaker": "Arkilli Chan", "text": "The stream might have been dammed at its source. Who dams a river?"}],
-     "caption": "The true heir declines to come — and is never seen on the throne."},
-    {"scene": "Delhi's north-east gate at dusk: a boy emperor's parade dissolving as nobles slip away to the enemy camp.",
-     "dialogue": [{"speaker": "Deserting Omrah", "text": "The boy is finished by morning."}],
-     "caption": "One parade, one night of desertions — and the boy flees with his mother and treasure."},
-    {"scene": "Citizens streaming out of the gate, bowing to the conqueror; minters striking new coin.",
-     "dialogue": [{"speaker": "Herald", "text": "The coin of the realm now bears the name of Alla ul dien!"}],
-     "caption": "Delhi opens its gates to the usurper; he ascends the throne in the red palace, 695 AH."},
-    {"scene": "A fortnight of festivals: drums, dancers, wine — the crowd roaring approval.",
-     "dialogue": [{"speaker": "The historian (caption)", "text": "He who ought to have been hooted with detestation became the object of admiration — they could not see the darkness of his deeds through the splendor of his magnificence."}],
-     "caption": "The chronicler's verdict on a crowd bought with spectacle."},
-    {"scene": "Forty thousand horse riding out toward Multan under new banners.",
-     "dialogue": [{"speaker": "Alla ul dien", "text": "Six months' pay to every man. Now — finish the race of Firose Shaw."}],
-     "caption": "With his army bought, he moves to erase the dynasty he murdered his way past. The reign of 'the Second Alexander' begins."}
-  ]
+    {
+      "scene": "A riverside pavilion: assassins strike down the old Sultan Jellal ul dien as he greets his nephew.",
+      "dialogue": [
+        {
+          "speaker": "Chronicler (caption)",
+          "text": "The nephew he raised repaid him thus."
+        }
+      ],
+      "caption": "The road to the throne began with the murder of his own uncle and benefactor."
+    },
+    {
+      "scene": "A madman in rags clawing at his own face in the dark.",
+      "dialogue": [
+        {
+          "speaker": "The assassin Achtiar Hoor",
+          "text": "He is cutting off my head! The Sultan is cutting off my head!"
+        }
+      ],
+      "caption": "The killers found no advancement: one went mad, suffering 'a thousand deaths in imagination' before he died."
+    },
+    {
+      "scene": "Delhi palace: the Queen mother crowns her younger son; courtiers exchange uneasy looks.",
+      "dialogue": [
+        {
+          "speaker": "Malleke Jehan",
+          "text": "The diadem goes to my boy. The provinces to our friends."
+        }
+      ],
+      "caption": "With the murderer still on the road, the Queen regent crowns the wrong prince."
+    },
+    {
+      "scene": "A rain-lashed road: horsemen marching; at the roadside the general slings handfuls of gold into a cheering crowd.",
+      "dialogue": [
+        {
+          "speaker": "Alla ul dien",
+          "text": "Let it rain gold. Soldiers follow gold."
+        }
+      ],
+      "caption": "Marching in the monsoon, he flings gold from a sling among the people — 'a world of soldiers' joins him."
+    },
+    {
+      "scene": "Multan terrace: Prince Arkilli Chan reading his mother's summons, waving it away.",
+      "dialogue": [
+        {
+          "speaker": "Arkilli Chan",
+          "text": "The stream might have been dammed at its source. Who dams a river?"
+        }
+      ],
+      "caption": "The true heir declines to come — and is never seen on the throne."
+    },
+    {
+      "scene": "Delhi's north-east gate at dusk: a boy emperor's parade dissolving as nobles slip away to the enemy camp.",
+      "dialogue": [
+        {
+          "speaker": "Deserting Omrah",
+          "text": "The boy is finished by morning."
+        }
+      ],
+      "caption": "One parade, one night of desertions — and the boy flees with his mother and treasure."
+    },
+    {
+      "scene": "Citizens streaming out of the gate, bowing to the conqueror; minters striking new coin.",
+      "dialogue": [
+        {
+          "speaker": "Herald",
+          "text": "The coin of the realm now bears the name of Alla ul dien!"
+        }
+      ],
+      "caption": "Delhi opens its gates to the usurper; he ascends the throne in the red palace, 695 AH."
+    },
+    {
+      "scene": "A fortnight of festivals: drums, dancers, wine — the crowd roaring approval.",
+      "dialogue": [
+        {
+          "speaker": "The historian (caption)",
+          "text": "He who ought to have been hooted with detestation became the object of admiration — they could not see the darkness of his deeds through the splendor of his magnificence."
+        }
+      ],
+      "caption": "The chronicler's verdict on a crowd bought with spectacle."
+    },
+    {
+      "scene": "Forty thousand horse riding out toward Multan under new banners.",
+      "dialogue": [
+        {
+          "speaker": "Alla ul dien",
+          "text": "Six months' pay to every man. Now — finish the race of Firose Shaw."
+        }
+      ],
+      "caption": "With his army bought, he moves to erase the dynasty he murdered his way past. The reign of 'the Second Alexander' begins."
+    }
+  ],
+  "theme": "Rise of Empires",
+  "hook": "A nephew who murdered his uncle, flung gold into crowds, and crowned himself 'the Second Alexander.'"
 }

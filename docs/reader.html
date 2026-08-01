@@ -4,7 +4,8 @@
 <title>Reader — The History of Hindostan, from the Earliest Account of Time, to the Death of Akbar</title>
 <link rel="stylesheet" href="assets/style.css">
 </head><body>
-<nav class="site"><div class="wrap"><a href="index.html">Home</a><a href="reader.html" class="active">Reader</a><a href="plates.html">Plates</a><a href="stories.html">Stories</a><a href="glossary.html">Glossary</a></div></nav>
+<nav class="site"><div class="wrap"><span class="brand">The History of Hindostan</span><a href="index.html">Home</a><a href="reader.html" class="active">Reader</a><a href="stories.html">Stories</a><a href="plates.html">Plates</a><a href="glossary.html">Glossary</a></div></nav>
+
 <main><div class="wrap">
 <div class="reader-bar">
   <button id="prev">← Prev</button><button id="next">Next →</button>
@@ -14,19 +15,25 @@
 <div id="search-results" class="search-results"></div>
 <div class="panes">
   <div class="pane scan"><h3>Original scan (1768)</h3><img id="scanimg" alt="scan"></div>
-  <div class="pane text"><h3>Transcription &amp; annotations</h3><div id="transcript"></div></div>
-</div></div></main>
-<footer class="site"><div class="wrap">Digitized from the 1768 edition · scan: Digital Library of India / Indian Culture · transcripts by vision model, may contain errors — check against the scan</div></footer>
-<script>
+  <div class="pane text"><h3><span>Transcription &amp; annotations</span><span class="era-tag" id="erae"></span></h3><div id="transcript"></div></div>
+</div>
+</div></main>
+<footer class="site"><div class="wrap">
+<span>The History of Hindostan, from the Earliest Account of Time, to the Death of Akbar · transcribed page-by-page by vision model from the 1768 scan (Digital Library of India)</span>
+<span><a href="https://github.com/chinmayjoshi/history-digitizer">View the source repository</a></span>
+</div></footer><script>
 let PAGES=[],IDX=0;
 function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
 async function initReader(){
-  const res=await fetch('data/pages.json');PAGES=(await res.json()).pages;
+  const res=await fetch('data/pages.json');const B=(await res.json());
+  PAGES=B.pages;
   const q=new URLSearchParams(location.search);IDX=Math.min(Math.max(0,parseInt(q.get('p')||'0')),PAGES.length-1);
-  const sel=document.getElementById('jump');
-  PAGES.forEach((pg,i)=>{const o=document.createElement('option');o.value=i;
-    o.textContent=(pg.p?('p.'+pg.p+' — '):'scan '+pg.n+' — ')+(pg.s||pg.k);sel.appendChild(o)});
-  sel.onchange=()=>go(parseInt(sel.value));
+  const sel=document.getElementById('jump');const grp={};
+  PAGES.forEach((pg,i)=>{const key=pg.era||'Front matter';
+    const o=document.createElement('option');o.value=i;o.dataset.grp=key;
+    o.textContent=(pg.p?('p.'+pg.p+' — '):'scan '+pg.n+' — ')+(pg.s||pg.k);
+    sel.appendChild(o)});
+  sel.addEventListener('change',()=>go(parseInt(sel.value)));
   document.getElementById('prev').onclick=()=>go(IDX-1);
   document.getElementById('next').onclick=()=>go(IDX+1);
   document.getElementById('search').oninput=onSearch;
@@ -35,8 +42,7 @@ async function initReader(){
   render();
 }
 function go(i){if(i<0||i>=PAGES.length)return;IDX=i;
-  history.replaceState(null,'','?p='+i);render();
-  window.scrollTo({top:0,behavior:'smooth'});}
+  history.replaceState(null,'','?p='+i);render();window.scrollTo({top:0,behavior:'smooth'})}
 function render(){
   const pg=PAGES[IDX];
   document.getElementById('jump').value=IDX;
@@ -48,10 +54,12 @@ function render(){
   img.onclick=()=>window.open(img.src,'_blank');
   let h=pg.t||'<p><em>No text on this page.</em></p>';
   if(pg.platedesc)h+='<div class="annots"><b>Plate:</b> '+esc(pg.platedesc)+'</div>';
-  if(pg.an&&pg.an.length){h+='<div class="annots"><h3>Annotations</h3><ul>'+
-    pg.an.map(a=>{const m=a.match(/^\[(.+?)\]\s*(.*)$/);
-      return m?'<li><span class="tag">['+esc(m[1])+']</span> '+esc(m[2])+'</li>':'<li>'+esc(a)+'</li>'}).join('')+'</ul></div>'}
+  if(pg.an&&pg.an.length){h+='<div class="annots"><h3>Annotations</h3><ul>'+pg.an.map(a=>{
+    const m=a.match(/^\[(.+?)\]\s*(.*)$/);
+    return m?'<li><span class="tag">['+esc(m[1])+']</span> '+esc(m[2])+'</li>':'<li>'+esc(a)+'</li>'}).join('')+'</ul></div>'}
   if(pg.notes)h+='<p class="pnote">Scan note: '+esc(pg.notes)+'</p>';
+  const et=document.getElementById('erae');
+  if(et)et.textContent=pg.era||'';
   document.getElementById('transcript').innerHTML=h;
 }
 function stripTags(h){const d=document.createElement('div');d.innerHTML=h;return d.textContent}
@@ -61,10 +69,10 @@ function onSearch(e){
   if(q.length<3){box.innerHTML='';return}
   const hits=[];
   PAGES.forEach((pg,i)=>{const txt=stripTags(pg.t||'').toLowerCase();
-    const at=txt.indexOf(q);if(at>=0)hits.push({i,pg,snip:txt.slice(Math.max(0,at-60),at+120)})});
-  box.innerHTML='<b>'+hits.length+' page(s) match:</b>'+hits.slice(0,40).map(h=>
-    '<a href="?p='+h.i+'" onclick="go('+h.i+');return false">'+
-    (h.pg.p?('p.'+h.pg.p):'scan '+h.pg.n)+' — …'+esc(h.snip)+'…</a>').join('');
+    const at=txt.indexOf(q);if(at>=0)hits.push({i,pg,snip:txt.slice(Math.max(0,at-55),at+120)})});
+  box.innerHTML='<b>'+hits.length+' page(s) match</b>'+hits.slice(0,40).map(h=>
+    '<a href="?p='+h.i+'" onclick="go('+h.i+');return false"><span class="hit-n">'+
+    (h.pg.era||'Front')+' · '+(h.pg.p?('p.'+h.pg.p):'scan '+h.pg.n)+'</span> — …'+esc(h.snip)+'…</a>').join('');
 }
 
 initReader();</script></body></html>

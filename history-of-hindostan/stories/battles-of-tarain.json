@@ -2,36 +2,110 @@
   "slug": "battles-of-tarain",
   "title": "The Two Battles of Tarain — Defeat, Dishonour, and One Sunset Charge",
   "pages": "printed pp. 151–155 (scans 245–249)",
-  "figures": ["Sultan Shab ul dien Mahummud Ghori", "Pittu Rai (Prithviraj Chauhan)", "Candi Rai, Raja of Delhi", "Cuttub ul dien Abeik (Qutbuddin Aibak)"],
+  "figures": [
+    "Sultan Shab ul dien Mahummud Ghori",
+    "Pittu Rai (Prithviraj Chauhan)",
+    "Candi Rai, Raja of Delhi",
+    "Cuttub ul dien Abeik (Qutbuddin Aibak)"
+  ],
   "summary": "1191. When Mahummud Ghori marched into Hindostan, the Rajput confederacy under the Chauhan king — the book's 'Pittu Rai' (Prithviraj) — met him near Thanesar with 200,000 horse and 3,000 elephants. The Sultan's wings were outflanked and driven in until his army fought as a circle. Advised to flee, he struck the adviser and charged instead — and was spotted by the Raja of Delhi, who drove his elephant straight at him. Mahummud hurled his lance with such force it knocked out three of the elephant's back teeth; the Raja's spear went through his right arm. As he sank from his horse, a faithful servant leaped up behind him and carried him from the field. The rout was pursued for forty miles. Back in Ghor, the Sultan publicly disgraced every Omrah who had deserted him. 1192. A sage petitioned him: let the disgraced Omrahs wipe away their stains. He sent for them, robed them in honour, and returned to the very same field — where Pittu Rai now waited with 300,000 Rajput horse, 3,000 elephants and 150 Rajas who had sworn their war-oaths with the tica on their foreheads. All day Mahummud attacked by divisions, wheeling off in feigned retreats, 'deluding them with a security of victory.' Then, as the sun touched the west, he put himself at the head of 12,000 steel-clad horse and made one resolute charge: 'this prodigious army, once shaken, like a great building, was lost in its own ruins.' The Raja of Delhi fell in the field; Pittu Rai was taken in the pursuit and put to death; Ajmer was stormed. The Sultan left his slave-general Cuttub ul dien Abeik behind with an army — the seed from which the whole Delhi Sultanate would grow.",
   "why": "Tarain (1191–92) is the hinge of Indian history — the moment northern India opened to the Delhi Sultanate. The book gives it as a two-act drama: a king who loses everything except his nerve in act one, and returns in act two with disgraced officers hungry for redemption and a tactical masterpiece of feigned retreat. The single combat — three elephant teeth knocked out by a lance — is the kind of detail only old chronicles keep.",
   "panels": [
-    {"scene": "1191, the field by the river Saraswati: the Sultan's army bent into a circle, Rajput horsemen flooding around it.",
-     "dialogue": [{"speaker": "Adviser", "text": "The wings are gone, Sire — provide for your own safety!"}, {"speaker": "Mahummud Ghori", "text": "(strikes him) Coward's counsel!"}],
-     "caption": "Outflanked and encircled by 200,000 horse, the Sultan refuses the advice to flee — and charges instead."},
-    {"scene": "A war-elephant bearing down; the Sultan on horseback hurls his lance.",
-     "dialogue": [{"speaker": "Mahummud Ghori", "text": "(hurls)"}],
-     "caption": "Spotted by the Raja of Delhi, he drives his lance so hard into the elephant it knocks out three of its back teeth."},
-    {"scene": "The Sultan sagging in the saddle, blood on his right arm; a soldier leaps up behind him.",
-     "dialogue": [{"speaker": "Faithful servant", "text": "Hold on to me, Sire!"}],
-     "caption": "The Raja's spear goes through his arm — a faithful servant catches him and carries him from the lost field."},
-    {"scene": "The court of Ghor, months later: disgraced Omrahs standing in chains before the throne.",
-     "dialogue": [{"speaker": "A sage", "text": "O King — let those you disgraced take this glorious opportunity to wipe away their stains."}],
-     "caption": "He had shamed every officer who deserted him. Now, on the eve of revenge, a sage pleads for their redemption."},
-    {"scene": "The disgraced Omrahs kneeling, receiving robes of honour.",
-     "dialogue": [{"speaker": "Mahummud Ghori", "text": "Attend my stirrup. Recover your honour."}],
-     "caption": "He releases them, robes each in a chelat of honour, and marches back to Hindostan with an army of the shamed."},
-    {"scene": "The Rajput camp at dusk: 150 Rajas anointing one another's foreheads with the red tica.",
-     "dialogue": [{"speaker": "Rajas (oath)", "text": "Victory or death!"}],
-     "caption": "Against him: 300,000 Rajput horse, 3,000 elephants, and 150 sworn kings on the same field as the year before."},
-    {"scene": "All day: divisions of the Sultan's horse charging, wheeling, retreating — again and again.",
-     "dialogue": [{"speaker": "Mahummud Ghori", "text": "By turns. Give ground. Delude them with a security of victory."}],
-     "caption": "For hours he fights and feigns retreat by divisions, wearing the enormous army ragged."},
-    {"scene": "Sunset: 12,000 steel-clad riders level their lances; the Rajput host breaks like a wave on rocks.",
-     "dialogue": [{"speaker": "Mahummud Ghori", "text": "Now. One charge — with me!"}],
-     "caption": "As the sun touches the west, the whole reserve charges: 'the prodigious army, once shaken, like a great building, was lost in its own ruins.'"},
-    {"scene": "Aftermath: the slave-general Cuttub ul dien Abeik receiving a banner and an army.",
-     "dialogue": [{"speaker": "Mahummud Ghori", "text": "Hindostan is yours to keep, Cuttub."}],
-     "caption": "Pittu Rai is taken and executed; Ajmer falls. The Sultan leaves his slave-general in India — the seed of the Delhi Sultanate."}
-  ]
+    {
+      "scene": "1191, the field by the river Saraswati: the Sultan's army bent into a circle, Rajput horsemen flooding around it.",
+      "dialogue": [
+        {
+          "speaker": "Adviser",
+          "text": "The wings are gone, Sire — provide for your own safety!"
+        },
+        {
+          "speaker": "Mahummud Ghori",
+          "text": "(strikes him) Coward's counsel!"
+        }
+      ],
+      "caption": "Outflanked and encircled by 200,000 horse, the Sultan refuses the advice to flee — and charges instead."
+    },
+    {
+      "scene": "A war-elephant bearing down; the Sultan on horseback hurls his lance.",
+      "dialogue": [
+        {
+          "speaker": "Mahummud Ghori",
+          "text": "(hurls)"
+        }
+      ],
+      "caption": "Spotted by the Raja of Delhi, he drives his lance so hard into the elephant it knocks out three of its back teeth."
+    },
+    {
+      "scene": "The Sultan sagging in the saddle, blood on his right arm; a soldier leaps up behind him.",
+      "dialogue": [
+        {
+          "speaker": "Faithful servant",
+          "text": "Hold on to me, Sire!"
+        }
+      ],
+      "caption": "The Raja's spear goes through his arm — a faithful servant catches him and carries him from the lost field."
+    },
+    {
+      "scene": "The court of Ghor, months later: disgraced Omrahs standing in chains before the throne.",
+      "dialogue": [
+        {
+          "speaker": "A sage",
+          "text": "O King — let those you disgraced take this glorious opportunity to wipe away their stains."
+        }
+      ],
+      "caption": "He had shamed every officer who deserted him. Now, on the eve of revenge, a sage pleads for their redemption."
+    },
+    {
+      "scene": "The disgraced Omrahs kneeling, receiving robes of honour.",
+      "dialogue": [
+        {
+          "speaker": "Mahummud Ghori",
+          "text": "Attend my stirrup. Recover your honour."
+        }
+      ],
+      "caption": "He releases them, robes each in a chelat of honour, and marches back to Hindostan with an army of the shamed."
+    },
+    {
+      "scene": "The Rajput camp at dusk: 150 Rajas anointing one another's foreheads with the red tica.",
+      "dialogue": [
+        {
+          "speaker": "Rajas (oath)",
+          "text": "Victory or death!"
+        }
+      ],
+      "caption": "Against him: 300,000 Rajput horse, 3,000 elephants, and 150 sworn kings on the same field as the year before."
+    },
+    {
+      "scene": "All day: divisions of the Sultan's horse charging, wheeling, retreating — again and again.",
+      "dialogue": [
+        {
+          "speaker": "Mahummud Ghori",
+          "text": "By turns. Give ground. Delude them with a security of victory."
+        }
+      ],
+      "caption": "For hours he fights and feigns retreat by divisions, wearing the enormous army ragged."
+    },
+    {
+      "scene": "Sunset: 12,000 steel-clad riders level their lances; the Rajput host breaks like a wave on rocks.",
+      "dialogue": [
+        {
+          "speaker": "Mahummud Ghori",
+          "text": "Now. One charge — with me!"
+        }
+      ],
+      "caption": "As the sun touches the west, the whole reserve charges: 'the prodigious army, once shaken, like a great building, was lost in its own ruins.'"
+    },
+    {
+      "scene": "Aftermath: the slave-general Cuttub ul dien Abeik receiving a banner and an army.",
+      "dialogue": [
+        {
+          "speaker": "Mahummud Ghori",
+          "text": "Hindostan is yours to keep, Cuttub."
+        }
+      ],
+      "caption": "Pittu Rai is taken and executed; Ajmer falls. The Sultan leaves his slave-general in India — the seed of the Delhi Sultanate."
+    }
+  ],
+  "theme": "Battles & Raids",
+  "hook": "Defeat, dishonour, and a sunset charge of twelve thousand steel-clad riders that opened India."
 }

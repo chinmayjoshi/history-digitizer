@@ -1,0 +1,30 @@
+{
+  "slug": "four-ages-of-the-world",
+  "title": "The Four Ages of the World — Time as a Wheel",
+  "theme": "Origins & Legends",
+  "hook": "Four vast ages, a world of creation, and the chance remark that all history is a wheel turning back on itself.",
+  "pages": "printed pp. 1–3 (scans 95–97) — the opening of Part I",
+  "figures": ["Brimha (Brahma)", "Ferishta", "Abul Fazil", "the four tribes"],
+  "summary": "This volume opens not with armies but with time itself. Ferishta, setting out the Hindoos' own account of their origin, reports that they divide the world into four grand periods or *jugs* (yugas): the Sat Jug — fourteen million four hundred thousand years of pure felicity, when men lived a hundred thousand years and there was 'nothing but truth, religion, happiness, peace, plenty, and independence'; the Treta Jug of a million years, when men lived ten thousand and truth was three parts in four; the Duapur Jug of seventy-two thousand years, half truth; and the Cal Jug — our own age — of thirty-six thousand years, in which 'three fourths of the composition of man consisted of falsehood, and only one fourth of truth,' and a man's span is a hundred years. When the Cal Jug is finished, the Sat Jug begins again: time revolves in eternal succession. Then Brimha creates the world — out of nothing — and divides mankind into the four tribes of Brahmin, Kittri, Bise and Sudur, a division 'strictly maintained to this day.' The whole wondrous structure rests, Ferishta notes, on the Mahabarit — 'the great war,' the Mahabharata — which Abul Fazil translated into Persian in Akbar's reign. It is a reminder that this 'history' of the earliest Hindu kings is a mirror of legend, not a chronicle.",
+  "why": "It frames the entire book. Before the Ghaznavids and the Delhi Sultans, before battles and crownings, Ferishta sets out a Hindu cosmology of collapsing ages — a vision in which the present is the worst of four worlds and every ruin is a return. It shows an 18th-century translator and a 16th-century Persian at work, respectfully describing a belief system none of them shared.",
+  "panels": [
+    {"scene": "Two facing books: an open Sanskrit manuscript and a Persian translation, ink and dust around them.",
+     "dialogue": [{"speaker": "Ferishta", "text": "From the Mahabarit — the great war — we take the Hindoos' own account of their beginning."}],
+     "caption": "The book 'begins' with a reminder that its earliest history is legend — recorded from the Mahabharata via Akbar's Persian court."},
+    {"scene": "Four stacked orbs of ever-dimming light; the top one blazing, the bottom dim with age.",
+     "dialogue": [{"speaker": "The Hindoos", "text": "Sat Jug: fourteen million years of truth. Cal Jug: our age — a fourth of truth, a century for a man."}],
+     "caption": "The four yugas: felicity collapsing into falsehood, spanning fourteen million years down to our own thirty-six thousand."},
+    {"scene": "A great wheel in the heavens, with Sat Jug rising again where Cal Jug ends.",
+     "dialogue": [],
+     "caption": "When the Cal Jug ends the Sat Jug returns — 'time revolves in eternal succession.'"},
+    {"scene": "Creation: a radiant figure commanding form out of void; fire, water, air, earth, and a fifth hidden element of heaven.",
+     "dialogue": [{"speaker": "Brimha", "text": "Let there be the elements, and then — man."}],
+     "caption": "Brimha creates the world out of nothing, and its five elements."},
+    {"scene": "A great divider assigning four stations to the new-made multitude.",
+     "dialogue": [],
+     "caption": "The four tribes: Brahmin to direct, Kittri to rule, Bise to labour, Sudur to serve — a division 'strictly maintained to this day.'"},
+    {"scene": "The historian's quill hovering at the edge of the page, adding a footnote to his own margin.",
+     "dialogue": [{"speaker": "Chronicler (caption)", "text": "He does not properly begin history until the empire of Ghizni — all before is the mirror of the Hindoos' own imagination."}],
+     "caption": "Ferishta is careful to call all of this 'fabulous' — the preface to a world of kings to come."}
+  ]
+}
