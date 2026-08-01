@@ -209,6 +209,14 @@ def load_stories(sdir: str) -> list[dict]:
     return stories
 
 
+def load_simple(path: str) -> dict | None:
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except OSError:
+        return None
+
+
 # ------------------------------------------------------------------- images
 
 def export_images(pages: list[dict], pages_dir: str, site_dir: str) -> None:
@@ -402,6 +410,26 @@ section.block{padding:54px 0 8px}
 .gloss .g{break-inside:avoid;margin-bottom:16px}
 .gloss .g h3{font-size:.95rem;color:var(--ox);font-weight:normal;margin-bottom:6px;border-bottom:1px solid var(--line);padding-bottom:4px}
 .gloss ul{padding-left:18px;font-size:.9rem}
+/* people / places */
+.people,.places{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.person,.place{display:flex;flex-direction:column;gap:8px}
+.person .person-head,.place .person-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:8px}
+.person h3,.place h3{font-size:1.15rem;font-weight:normal}
+.person .span,.place .span{color:var(--ox);font-size:.8rem;letter-spacing:.04em;font-variant:small-caps}
+.person .role,.place .role{color:var(--gold);font-size:.82rem;letter-spacing:.05em;text-transform:uppercase}
+.person p,.place p{font-size:.92rem;color:var(--ink)}
+.person .ednote,.place .ednote{background:#f1e7cd;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 4px 4px 0;font-size:.9rem}
+.person .ednote b,.place .ednote b{color:var(--ox)}
+.person .meta,.place .meta{margin-top:auto;padding-top:6px;font-size:.85rem;color:var(--muted)}
+/* timeline */
+.tl-scroll{display:flex;gap:0;overflow-x:auto;padding:8px 4px 16px;scroll-snap-type:x proximity}
+.tl-item{flex:0 0 176px;background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--ox);border-radius:6px;padding:12px 12px;margin-right:12px;scroll-snap-align:start;
+  display:flex;flex-direction:column;gap:6px;box-shadow:0 4px 10px rgba(32,25,19,.08);text-decoration:none;color:var(--ink);transition:transform .15s ease}
+.tl-item:hover{transform:translateY(-3px);color:var(--ink);text-decoration:none;border-top-color:var(--gold)}
+.tl-year{color:var(--ox);font-size:1.05rem;font-variant:small-caps;letter-spacing:.03em}
+.tl-label{font-size:.86rem;line-height:1.35}
+.tl-era{align-self:flex-start;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--olive);border-radius:9px;padding:1px 8px;margin-top:auto}
+.tl-era:before{content:"Era "}
 footer.site{border-top:1px solid var(--line);padding:28px 0;font-size:.83rem;color:var(--muted);
   margin-top:50px}
 footer.site .wrap{display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between}
@@ -466,7 +494,8 @@ function onSearch(e){
 
 def page_html(title, nav_active, body, extra_js=""):
     nav = [("index.html", "Home"), ("reader.html", "Reader"),
-           ("stories.html", "Stories"), ("plates.html", "Plates"),
+           ("stories.html", "Stories"), ("people.html", "People"),
+           ("places.html", "Places"), ("plates.html", "Plates"),
            ("glossary.html", "Glossary")]
     links = []
     for h, t in nav:
@@ -493,6 +522,9 @@ def build(book_dir, site_dir, work_dir, stories_dir):
         book = json.load(f)
     pages = load_transcripts(os.path.join(work_dir, "transcripts"))
     stories = load_stories(stories_dir)
+    people = (load_simple(os.path.join(book_dir, "people.json")) or {}).get("people", [])
+    places = (load_simple(os.path.join(book_dir, "places.json")) or {}).get("places", [])
+    timeline = (load_simple(os.path.join(book_dir, "timeline.json")) or {}).get("events", [])
     chapters = extract_chapters(pages, os.path.join(work_dir, "transcripts"))
 
     # assign era to each page + chapter
@@ -528,9 +560,11 @@ def build(book_dir, site_dir, work_dir, stories_dir):
     book_title = btitle
     book_repo = "https://github.com/chinmayjoshi/history-digitizer"
 
-    build_landing(site_dir, book, pages, chapters_by_era, stories, total_words)
+    build_landing(site_dir, book, pages, chapters_by_era, stories, total_words, timeline)
     build_reader(site_dir, book, pages)
     build_stories(site_dir, book, stories)
+    build_people(site_dir, book, pages, people, stories)
+    build_places(site_dir, book, pages, places, stories)
     build_plates(site_dir, book, pages)
     build_glossary(site_dir, book, pages)
     print(f"site written to {site_dir}/")
@@ -612,7 +646,7 @@ def era_card(e, chapters):
 </div>"""
 
 
-def build_landing(site_dir, book, pages, chapters_by_era, stories, total_words):
+def build_landing(site_dir, book, pages, chapters_by_era, stories, total_words, timeline=()):
     hero = hero_body(site_dir, book, total_words, pages)
     stats = stats_body(total_words, pages, stories)
     eras = "".join(era_card(e, chapters_by_era) for e in ERAS)
@@ -623,6 +657,16 @@ def build_landing(site_dir, book, pages, chapters_by_era, stories, total_words):
         plate_html += (f'<figure><a href="reader.html?p={pages.index(p)}">'
                        f'<img loading="lazy" src="assets/pages/page_{p["n"]:04d}.jpg"></a>'
                        f'<figcaption>{html.escape(p["platedesc"] or "Plate")}</figcaption></figure>')
+
+    timeline_html = ""
+    if timeline:
+        items = "".join(
+            f'<a class="tl-item" href="reader.html?p={e.get("read_scan",0)}">'
+            f'<span class="tl-year">{html.escape(str(e.get("ce","")))}</span>'
+            f'<span class="tl-label">{html.escape(str(e.get("label","")))}</span>'
+            f'<span class="tl-era">{html.escape(str(e.get("era","")))}</span></a>'
+            for e in timeline)
+        timeline_html = f'<div class="tl-scroll">{items}</div>'
     body = f"""{hero}{stats}
 <main><div class="wrap">
   <section class="block">
@@ -633,6 +677,10 @@ def build_landing(site_dir, book, pages, chapters_by_era, stories, total_words):
   <section class="block">
     <div class="section-head"><span class="orn">✦</span><h2>The three eras</h2><p>Choose a thread through the book</p></div>
     <div class="eras">{eras}</div>
+  </section>
+  <section class="block">
+    <div class="section-head"><span class="orn">◷</span><h2>Across the centuries</h2><p>A chronological spine · Hijri years as Firishta gives them</p></div>
+    <div class="tl">{timeline_html}</div>
   </section>
   <section class="block">
     <div class="section-head"><span class="orn">❦</span><h2>Notable stories</h2><p>The episodes that stopped us — retold with comic panels</p></div>
@@ -738,6 +786,79 @@ def build_stories(site_dir, book, stories):
 </div></main>"""
         with open(os.path.join(site_dir, f"story-{s['slug']}.html"), "w") as f:
             f.write(page_html(s["title"], "stories", body))
+
+
+def build_people(site_dir, book, pages, people, stories):
+    if not people:
+        return
+    story_by_slug = {s["slug"]: s for s in stories}
+    intro = "The monarchs, slave-kings, queens and conquerors who cross Firishta's pages."
+    cards = []
+    for p in people:
+        story_links = "".join(
+            f'<a href="story-{html.escape(s)}.html">featured story</a> '
+            for s in p.get("stories", []) if s in story_by_slug)
+        read = (f'<span class="meta">Read: '
+                f'<a href="reader.html?p={p.get("read_scan",0)}">scan {p.get("read_scan","")}</a>'
+                + (f" · {story_links}" if story_links else "")
+                + "</span>")
+        cards.append(f"""
+<div class="card person">
+  <div class="person-head">
+    <h3>{html.escape(p.get('name',''))}</h3>
+    <span class="span">{html.escape(p.get('dates',''))}</span>
+  </div>
+  <p class="role">{html.escape(p.get('role',''))}</p>
+  <p><b>In the book:</b> {html.escape(p.get('book',''))}</p>
+  <p class="ednote"><b>Editor's note:</b> {html.escape(p.get('note',''))}</p>
+  {read}
+</div>""")
+    body = f"""<main><div class="wrap">
+  <section class="block">
+    <div class="section-head"><span class="orn">♛</span><h2>The people — a cast of the book</h2>
+      <p>Monarchs, slave-kings, queens and conquerors crossing Firishta's pages</p></div>
+    <p class="lead">{html.escape(intro)}</p>
+  </section>
+  <section class="block"><div class="people">{''.join(cards)}</div></section>
+</div></main>"""
+    with open(os.path.join(site_dir, "people.html"), "w") as f:
+        f.write(page_html("People", "people", body))
+
+
+def build_places(site_dir, book, pages, places, stories):
+    if not places:
+        return
+    story_by_slug = {s["slug"]: s for s in stories}
+    cards = []
+    for p in places:
+        story_links = "".join(
+            f'<a href="story-{html.escape(s)}.html">featured story</a> '
+            for s in p.get("stories", []) if s in story_by_slug)
+        read = (f'<span class="meta">Read: '
+                f'<a href="reader.html?p={p.get("read_scan",0)}">scan {p.get("read_scan","")}</a>'
+                + (f" · {story_links}" if story_links else "")
+                + "</span>")
+        cards.append(f"""
+<div class="card place">
+  <div class="person-head">
+    <h3>{html.escape(p.get('name',''))}</h3>
+    <span class="span">{html.escape(p.get('modern',''))}</span>
+  </div>
+  <p class="role">{html.escape(p.get('role',''))}</p>
+  <p><b>In the book:</b> {html.escape(p.get('book',''))}</p>
+  <p class="ednote"><b>Editor's note:</b> {html.escape(p.get('note',''))}</p>
+  {read}
+</div>""")
+    body = f"""<main><div class="wrap">
+  <section class="block">
+    <div class="section-head"><span class="orn">♁</span><h2>The places of the book</h2>
+      <p>Cities, frontiers, rivers and holy places on Firishta's stage</p></div>
+    <p class="lead">From Ghizni to Sumnat, the geography that shaped the history — with the modern settings of each.</p>
+  </section>
+  <section class="block"><div class="places">{''.join(cards)}</div></section>
+</div></main>"""
+    with open(os.path.join(site_dir, "places.html"), "w") as f:
+        f.write(page_html("Places", "places", body))
 
 
 def build_plates(site_dir, book, pages):

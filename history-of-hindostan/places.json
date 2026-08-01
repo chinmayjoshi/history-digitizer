@@ -1,0 +1,122 @@
+{
+  "intro": "The stage on which Firishta's history unfolds — cities, frontiers, rivers and holy places. 'Now' is the modern location, 'read' is where the place matters most in the volume. The 1768 spellings (Ghizni, Moultan, Sumnat &c.) are kept; the Editor's note gives the modern reading.",
+  "places": [
+    {
+      "name": "Ghizni",
+      "modern": "Ghazni, Afghanistan",
+      "role": "Capital of the Ghaznavid Empire",
+      "book": "The 'Empire of Ghizni' of Part II: seat of Sabuktigin's slaves, of Mahmud's minting, and of the golden throne whose mosque threshold received fragments of the Somnath idol.",
+      "note": "Today a small Afghan city, Ghazni was briefly one of the great cultural and military capitals of Asia under Mahmud — a centre of Persian poetry and the springboard for seventeen raids into India.",
+      "read_scan": 128,
+      "stories": ["slave-who-became-king", "fall-of-somnath"]
+    },
+    {
+      "name": "Hindostan",
+      "modern": "India (the Indo-Gangetic plain chiefly)",
+      "role": "The book's name for India",
+      "book": "The whole stage: 'the History of the Hindoos before the first invasion… by the Mahomedans.' The name colours every page, from the fabulous kings to the eve of Timur.",
+      "note": "In Dow's and Firishta's usage 'Hindostan' specifically meant northern India — the basins of the Indus and Ganges — not the peninsula (the 'Decan'), which the Delhi sultans only intermittently reached.",
+      "read_scan": 1,
+      "stories": []
+    },
+    {
+      "name": "Delhi",
+      "modern": "Delhi, India",
+      "role": "Capital of the Sultanate; a city of seven successive capitals",
+      "book": "Three Delhis meet here: the 'old city' of the Chauhans, the palace of Seri (Siri, Alauddin's city) and Firose-abad — the stage for the Slave, Khalji and Tughlaq sultans, and finally the two kings warring within one capital.",
+      "note": "By the late 14th century Sultanate Delhi sprawled across several walled cities. Timur, entering in 1398, is reported to have been astonished by the gardens — and to have depopulated the city in three days of massacre.",
+      "read_scan": 258,
+      "stories": ["second-alexander", "two-kings-one-city", "empress-rizia"]
+    },
+    {
+      "name": "Moultan",
+      "modern": "Multan, Punjab, Pakistan",
+      "role": "Frontier gateway and siege city",
+      "book": "Time and again the hinge of war: besieged six months by Timur's grandson, contested between the Tughlaq governors, and the refuge of princes and pretenders throughout Part III.",
+      "note": "Multan, on the ancient trade route to Central Asia, has been a fortified prize for millennia — one of the oldest continuously inhabited cities of the subcontinent and, then, a stronghold of Sunni learning.",
+      "read_scan": 456,
+      "stories": []
+    },
+    {
+      "name": "Lahore",
+      "modern": "Lahore, Pakistan",
+      "role": "Ghaznavid frontier capital; refuge of defeated sultans",
+      "book": "Where Muhammad Ghori recovered from his wound after the first Tarain defeat, and where pretenders and exiles repeatedly gathered armies to march on Delhi.",
+      "note": "Lahore was Mahmud's winter capital and, for the Ghaznavids, the western seat from which India was governed — a role the city would replay for empires for nine hundred years.",
+      "read_scan": 245,
+      "stories": ["battles-of-tarain"]
+    },
+    {
+      "name": "Sumnat",
+      "modern": "Somnath, Gujarat, India",
+      "role": "The great temple destroyed by Mahmud (c. 1025/26)",
+      "book": "The sea-girt 'lofty castle on a narrow peninsula' and the richest idol of Hindostan — whose destruction, Dow reports from Firishta, yielded treasure 'greater… than any royal treasury ever contained.'",
+      "note": "Somnath has been destroyed and rebuilt many times over a millennium; a temple stands there today. Modern historians debate the raid's scale but not its reality — it remains one of the most contested events in Indian historiography.",
+      "read_scan": 174,
+      "stories": ["fall-of-somnath"]
+    },
+    {
+      "name": "The field of Tarain",
+      "modern": "Taraori, near Thanesar, Haryana, India",
+      "role": "Scene of the two decisive battles (1191 & 1192)",
+      "book": "Dow places it near 'Tannassar' on the 'Sirfutti' (Saraswati) river — first a Rajput victory, then, on the same field, the ruin of Pittu Rai's army of 300,000.",
+      "note": "Tarain (Taraori) is one of the pivot-stones of Indian history: the second battle ended Hindu supremacy over the north and opened it to the Delhi Sultanate.",
+      "read_scan": 245,
+      "stories": ["battles-of-tarain"]
+    },
+    {
+      "name": "Ajmere",
+      "modern": "Ajmer, Rajasthan, India",
+      "role": "Capital of Prithviraj and the Chauhans",
+      "book": "Where Ghori sent his embassy 'with a declaration of war if they should reject the true faith', and whose fall — with 'thousands put to the sword' and the rest enslaved — followed the second battle of Tarain.",
+      "note": "Ajmer was a Rajput stronghold on the trade route to the west; its conquest, like Tarain, brought Rajputana within reach of Delhi — an omen of the long struggle between the sultans and the great Rajput house of Mewar.",
+      "read_scan": 247,
+      "stories": ["battles-of-tarain"]
+    },
+    {
+      "name": "Tiberhind",
+      "modern": "Tabarhinda (Bhatinda), Punjab, India",
+      "role": "The frontier fort of Razia's imprisonment and marriage",
+      "book": "The fort to which the great Empress Rizia was sent after her army's mutiny — and where her captor and jailer Altunia married her, the strange alliance that twice marched on Delhi to win back her empire.",
+      "note": "A minor fort on the desert frontier of Punjab, Tabarhinda enters history almost solely through Razia's last, doomed campaigns — a footnote fort made famous by a queen's fall.",
+      "read_scan": 280,
+      "stories": ["empress-rizia"]
+    },
+    {
+      "name": "The river Sind",
+      "modern": "The Indus",
+      "role": "The great western barrier of Hindostan",
+      "book": "The crossing-point of every invader from the north-west — Mahmud's armies, Ghori's, and finally Timur, whose crossing of the Sind is the last line of Vol. I.",
+      "note": "Few rivers have been crossed by so many world-conquerors. The Indus was the pivot of Dow's whole scheme: everything east of it was 'Hindostan', and to cross it was to enter the history of India.",
+      "read_scan": 456,
+      "stories": ["two-kings-one-city"]
+    },
+    {
+      "name": "The Cheiber Pass",
+      "modern": "The Khyber Pass, Afghanistan/Pakistan border",
+      "role": "The invasion gateway",
+      "book": "Mentioned as the 'fort of Cheiber in the passes of the mountains' built by the Afghan-Pathan tribes to guard the approaches of Hindostan — a barrier every north-western invader ultimately had to force.",
+      "note": "The Khyber has funneled armies for over two thousand years — Alexander, Mahmud, Ghori, Babur, and later the British — making it the single most strategic defile in the region's history.",
+      "read_scan": 132,
+      "stories": []
+    },
+    {
+      "name": "Sirindiep",
+      "modern": "Ceylon (Sri Lanka)",
+      "role": "The island refuge of the Somnath garrison",
+      "book": "Where the four thousand of Somnath's garrison fled by boat 'intending to proceed to the island of Sirindiep' after their walls fell — Dow's footnote glosses it simply: 'Ceylon.'",
+      "note": "That defeated defenders of a temple in Gujarat would sail for Sri Lanka tells us how far Arab and Indian maritime trade had knit the Indian Ocean together by the 11th century.",
+      "read_scan": 178,
+      "stories": ["fall-of-somnath"]
+    },
+    {
+      "name": "The Ganges",
+      "modern": "The Ganga, India",
+      "role": "The sacred river of the Hindoos",
+      "book": "Mentioned with awe at Somnath — the idolaters washed the god 'every morning and evening, with fresh water from the Ganges, though that river is above five hundred crores distant.'",
+      "note": "The water for the daily bath came from thousands of miles away — a measure both of the Ganges' sanctity and of the immense pilgrim routes that already crossed India in the 11th century.",
+      "read_scan": 180,
+      "stories": ["fall-of-somnath"]
+    }
+  ]
+}

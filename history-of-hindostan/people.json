@@ -1,0 +1,145 @@
+{
+  "intro": "The book's cast — the monarchs, slaves who became kings, queens, tyrants and conquerors who cross Firishta's pages. 'Read' is where each first or most strongly appears in the reader. 'Editor's note' is later scholarship about them, added to the text of the 1768 translation.",
+  "people": [
+    {
+      "name": "Ferishta",
+      "book_name": "Mahummud Casim Ferishta of Delhi",
+      "role": "Author of the original history (Persian)",
+      "dates": "c. 1570 – c. 1620",
+      "book": "The chronicler whose work Dow here translates. Dow notes Ferishta 'does not properly speaking begin his history till the empire of Ghizni was founded by Subuctagi.'",
+      "note": "Born in Astrabad (Persia), Firishta emigrated to the Deccan as a boy and wrote under the patronage of Ibrahim Adil Shah II of Bijapur. His great work — called the 'Gulshan-i-Ibrahimi' — became, as 'Tarikh-i-Firishta', one of the most widely read histories of India in both Persian and, after Dow, in English.",
+      "read_scan": 95,
+      "stories": []
+    },
+    {
+      "name": "Alexander Dow",
+      "book_name": "Alexander Dow",
+      "role": "Translator & editor (1768)",
+      "dates": "1735/36 – 1779",
+      "book": "The Scottish officer who carried Firishta into English as 'The History of Hindostan, from the Earliest Account of Time, to the Death of Akbar' (Vol. I, 1768). He added the long Dissertation on the Brahmins and the saving footnotes that make the book a window into 18th-century British learning about India.",
+      "note": "An employee of the East India Company in Bengal, Dow was one of the first Englishmen to publish a serious study of India's past. His 'Dissertation' is a curiosity of its age — an Enlightenment attempt to describe Hindu philosophy, complete with comparisons to the Druids and the Greeks.",
+      "read_scan": 11,
+      "stories": []
+    },
+    {
+      "name": "Subuktigin (Sabuktigin)",
+      "book_name": "Nasir ul-dien Subuctagi",
+      "role": "Founder of the Ghaznavid Empire; a Turkish slave who became king",
+      "dates": "d. 997",
+      "book": "Originally a Turkish slave, elected King of Ghizni by its omrahs in 367 of the Hegira (977). Dow's verdict: he 'established justice in his dominions, and held the hearts of his subjects in his hand.'",
+      "note": "Sabuktigin was the father of Mahmud of Ghazni. From a slave-soldier of the Samanid court he rose to rule an emirate that his son would expand into the first great Muslim empire centred on India's frontier.",
+      "read_scan": 133,
+      "stories": ["slave-who-became-king"]
+    },
+    {
+      "name": "Mahmud of Ghazni",
+      "book_name": "Sultan Mamood Ghiznavi",
+      "role": "Sultan of Ghazni; seventeen expeditions into India",
+      "dates": "971 – 1030",
+      "book": "The idol-breaker of Somnath. Dow records his musters — 55,000 horse, 1,300 elephants, 100,000 foot — and his refusal to be called 'a seller of idols' when the Brahmins offered crores in gold to spare their god.",
+      "note": "Modern historians see Mahmud's raiding — chiefly for treasure to fund campaigns in Central Asia — as the moment the subcontinent's military power began to swing decisively to the north-west. Somnath's riches were not myth: the temple was one of India's wealthiest.",
+      "read_scan": 117,
+      "stories": ["fall-of-somnath"]
+    },
+    {
+      "name": "Prithviraj Chauhan",
+      "book_name": "Pittu Rai / Candi Rai",
+      "role": "Rajput king, champion of Ajmer & Delhi",
+      "dates": "c. 1159 – 1192",
+      "book": "Winner of the first battle of Tarain, who unhorsed Muhammad Ghori; defeated and 'put to death' after the second. Dow's 'Pittu Rai' combines the legendary Chauhan king with the Raja of Delhi.",
+      "note": "Prithviraj III was the last great Rajput ruler to hold Delhi, and the hero of the epic 'Prithviraj Raso'. Modern scholarship is cautious about the later heroics — but the two Tarain defeats genuinely ended Rajput supremacy over the north.",
+      "read_scan": 245,
+      "stories": ["battles-of-tarain"]
+    },
+    {
+      "name": "Muhammad of Ghor (Ghori)",
+      "book_name": "Shab ul dien Mahummud Ghori",
+      "role": "Conqueror of northern India; founder of the Delhi Sultanate in effect",
+      "dates": "1149 – 1206",
+      "book": "The 'Sultan of the house of Ghor' who, after losing at Tarain (1191), returned to wrest back the field (1192) and left his slave-general Cuttub ul dien behind to rule Hindostan.",
+      "note": "Unlike Mahmud, Ghori came to stay — settling governors and building a durable state rather than merely plundering it. His assassination in 1206 left his Indian conquests to his slave-successors, beginning the Delhi Sultanate.",
+      "read_scan": 248,
+      "stories": ["battles-of-tarain"]
+    },
+    {
+      "name": "Qutb-ud-din Aibak",
+      "book_name": "Cuttub ul dien Abeik",
+      "role": "First Sultan of Delhi; founder of the 'Slave' (Mamluk) dynasty",
+      "dates": "d. 1210",
+      "book": "The slave-general Mohammed Ghori left in command at Koram after Tarain — 'Hindostan is yours to keep, Cuttub.' He founded the line that became the Sultanate of Delhi.",
+      "note": "A Turkic slave purchased by Ghori, Aibak began the Qutb Minar, and his death in a polo accident (a fall from his horse) cut short the reign of the soldier who inaugurated three centuries of Delhi sultans.",
+      "read_scan": 258,
+      "stories": ["battles-of-tarain"]
+    },
+    {
+      "name": "Iltutmish (Shams-ud-din Altamsh)",
+      "book_name": "Shumse ul dien Altumsh",
+      "role": "Third Sultan of Delhi; the 'slave of a slave' who made the dynasty durable",
+      "dates": "r. 1211 – 1236",
+      "book": "The sultan who, asked why he favoured his daughter Rizia over his sons, answered that his sons 'gave themselves up to wine, women, gaming, and the worship of the wind.'",
+      "note": "Iltutmish steadied the Sultanate against Mongol pressure, completed the Qutb Minar, and secured Delhi's legitimacy from the abbasid Caliph. His creation of a 'Group of Forty' Turkish nobles shaped Delhi politics for generations — and set the stage for his daughter's unhappy reign.",
+      "read_scan": 270,
+      "stories": ["empress-rizia"]
+    },
+    {
+      "name": "Razia Sultan",
+      "book_name": "Malleke Doran Sultana Rizia",
+      "role": "First and only woman Sultan of Delhi",
+      "dates": "r. 1236 – 1240",
+      "book": "Adjudged 'to have every qualification demanded in the ablest kings; the strictest scrutineers of her actions could find in her no fault but that she was a woman.' She was deposed, imprisoned, married by her jailer, and died 'deserving a better fate.'",
+      "note": "Razia genuinely ruled Delhi in her own name — she minted coin and sat in open audience as Sultan, not just queen. Her fall came largely from appointing an Abyssinian freedman above the Turkish nobles, chiefly for her favour rather than their consent.",
+      "read_scan": 277,
+      "stories": ["empress-rizia"]
+    },
+    {
+      "name": "Ghiyas-ud-din Balban",
+      "book_name": "Yeas ul dien Balin",
+      "role": "Sultan of Delhi; the 'iron' ruler of the late Slave dynasty",
+      "dates": "r. 1266 – 1287",
+      "book": "The general who twice defeated Razia's attempts to recover her throne, later himself Sultan — his court, Dow notes, was reckoned 'the most magnificent in the world', where the poet (Amir Khusrau) presided over nightly literary assemblies.",
+      "note": "Balban ruthlessly crushed the nobles and exalted the dignity of the crown with an almost paranoid ceremony — keeping even his Ghaznavid officers at a distance of kisses and prostrations. He is the bridge between the early slaves and the later military empires.",
+      "read_scan": 297,
+      "stories": []
+    },
+    {
+      "name": "Alauddin Khilji",
+      "book_name": "Alla ul dien, called Secunder Sani",
+      "role": "Sultan of Delhi; 'the Second Alexander'",
+      "dates": "r. 1296 – 1316",
+      "book": "The nephew who murdered his uncle on the road to the throne, flung gold from a sling into crowds, and drowned his crime in festivals — 'He who ought to have been hooted with detestation became the object of admiration.'",
+      "note": "Beneath the calculated terror, Alauddin was a genuine state-builder: he rolled back the Mongols, fixed grain prices with a controlled market, and sent Malik Kafur's armies into the far south — ambitions he distantly borrowed from Alexander's name.",
+      "read_scan": 349,
+      "stories": ["second-alexander"]
+    },
+    {
+      "name": "Muhammad bin Tughlaq",
+      "book_name": "Sultan Mahummud Tuglick",
+      "role": "Sultan of Delhi; the tyrant of legend",
+      "dates": "r. 1325 – 1351",
+      "book": "The sultan Dow buries with the harshest epitaph in the book: he 'seems to have laboured, with no contemptible abilities, to be detested by God, and feared and abhorred by all men.'",
+      "note": "Muhammad bin Tughlaq was brilliant and erratic — he relocated his capital to Daulatabad, introduced a token copper currency that collapsed, and is suspected of killing his own father to mount the throne. He died of a fever after dining on fish, on campaign against the Sind.",
+      "read_scan": 407,
+      "stories": ["tyrant-and-builder"]
+    },
+    {
+      "name": "Firoz Shah Tughlaq",
+      "book_name": "Moazim Mohizzib Firose Shaw",
+      "role": "Sultan of Delhi; the great builder",
+      "dates": "r. 1351 – 1388",
+      "book": "Nephew and death-bed chosen heir to the tyrant; on his first day he ransomed prisoners and on his third defeated the mercenaries who had looted the camp — 'gladdening the face of the court with princely presents.'",
+      "note": "Firoz is remembered as one of India's great public works builders — canals, reservoirs, new cities such as Fatehabad and Hissar, colleges and hospitals — and for attempting to base rule on Islamic law rather than terror. The contrast with his uncle is the sharpest in the volume.",
+      "read_scan": 430,
+      "stories": ["tyrant-and-builder"]
+    },
+    {
+      "name": "Timur (Tamerlane)",
+      "book_name": "Amir Timur",
+      "role": "The approaching conqueror (his invasion fills Vol. II)",
+      "dates": "1336 – 1405",
+      "book": "Vol. I closes on the cliffhanger of his approach — 'to compleat the miseries of the unhappy city and empire, news arrived that Amir Timur had crossed the Sind, with an intention to conquer Hindostan.'",
+      "note": "Timur the Lame sacked Delhi in December 1398, slaughtering on a scale reported in every contemporary account and carrying its artisans and craftsmen back to Samarkand. His invasion marks the effective end of the Sultanate's unity — exactly where Vol. I stops.",
+      "read_scan": 458,
+      "stories": ["two-kings-one-city"]
+    }
+  ]
+}

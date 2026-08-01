@@ -162,6 +162,26 @@ section.block{padding:54px 0 8px}
 .gloss .g{break-inside:avoid;margin-bottom:16px}
 .gloss .g h3{font-size:.95rem;color:var(--ox);font-weight:normal;margin-bottom:6px;border-bottom:1px solid var(--line);padding-bottom:4px}
 .gloss ul{padding-left:18px;font-size:.9rem}
+/* people / places */
+.people,.places{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.person,.place{display:flex;flex-direction:column;gap:8px}
+.person .person-head,.place .person-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:8px}
+.person h3,.place h3{font-size:1.15rem;font-weight:normal}
+.person .span,.place .span{color:var(--ox);font-size:.8rem;letter-spacing:.04em;font-variant:small-caps}
+.person .role,.place .role{color:var(--gold);font-size:.82rem;letter-spacing:.05em;text-transform:uppercase}
+.person p,.place p{font-size:.92rem;color:var(--ink)}
+.person .ednote,.place .ednote{background:#f1e7cd;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 4px 4px 0;font-size:.9rem}
+.person .ednote b,.place .ednote b{color:var(--ox)}
+.person .meta,.place .meta{margin-top:auto;padding-top:6px;font-size:.85rem;color:var(--muted)}
+/* timeline */
+.tl-scroll{display:flex;gap:0;overflow-x:auto;padding:8px 4px 16px;scroll-snap-type:x proximity}
+.tl-item{flex:0 0 176px;background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--ox);border-radius:6px;padding:12px 12px;margin-right:12px;scroll-snap-align:start;
+  display:flex;flex-direction:column;gap:6px;box-shadow:0 4px 10px rgba(32,25,19,.08);text-decoration:none;color:var(--ink);transition:transform .15s ease}
+.tl-item:hover{transform:translateY(-3px);color:var(--ink);text-decoration:none;border-top-color:var(--gold)}
+.tl-year{color:var(--ox);font-size:1.05rem;font-variant:small-caps;letter-spacing:.03em}
+.tl-label{font-size:.86rem;line-height:1.35}
+.tl-era{align-self:flex-start;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--olive);border-radius:9px;padding:1px 8px;margin-top:auto}
+.tl-era:before{content:"Era "}
 footer.site{border-top:1px solid var(--line);padding:28px 0;font-size:.83rem;color:var(--muted);
   margin-top:50px}
 footer.site .wrap{display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between}

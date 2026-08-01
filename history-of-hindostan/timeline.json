@@ -1,0 +1,22 @@
+{
+  "intro": "A chronological spine across the book — Hijri (AH) years as Firishta gives them, with the Common-Era (CE) equivalents. Read at the reader where each moment lands.",
+  "events": [
+    {"ce": "c. 962", "ah": "c. 351", "label": "Abistagi (Alptegin) seizes Ghizni from the Samanids", "era": "II", "read_scan": 134},
+    {"ce": "977", "ah": "367", "label": "The omrahs elect the slave Subuctagi King of Ghizni", "era": "II", "read_scan": 135},
+    {"ce": "997", "ah": "387", "label": "Mahmud ascends the throne of Ghizni", "era": "II", "read_scan": 133},
+    {"ce": "1001–1026", "ah": "391–416", "label": "Mahmud's seventeen expeditions into Hindostan", "era": "II", "read_scan": 163},
+    {"ce": "c. 1025", "ah": "416", "label": "The destruction of the idol of Sumnat", "era": "II", "read_scan": 178},
+    {"ce": "1030", "ah": "421", "label": "Death of Sultan Mahmud", "era": "II", "read_scan": 163},
+    {"ce": "1150s–1186", "ah": "c. 545–581", "label": "Rise of Ghor; Ghori burns Ghizni, Ghaznavids end", "era": "II", "read_scan": 240},
+    {"ce": "1191", "ah": "587", "label": "First battle of Tarain — Ghori defeated by Pittu Rai", "era": "III", "read_scan": 245},
+    {"ce": "1192", "ah": "588", "label": "Second battle of Tarain — Pittu Rai slain", "era": "III", "read_scan": 249},
+    {"ce": "1206", "ah": "602", "label": "Death of Ghori; Cuttub ul dien Abeik begins the Sultanate of Delhi", "era": "III", "read_scan": 258},
+    {"ce": "1211–1236", "ah": "608–633", "label": "Reign of Shumse ul dien Altumsh (Iltutmish)", "era": "III", "read_scan": 270},
+    {"ce": "1236–1240", "ah": "634–638", "label": "Reign and fall of the Empress Rizia", "era": "III", "read_scan": 277},
+    {"ce": "1266–1287", "ah": "664–685", "label": "Reign of Balin (Balban), the 'iron' sultan", "era": "III", "read_scan": 297},
+    {"ce": "1296–1316", "ah": "695–716", "label": "Reign of Alla ul dien, 'the Second Alexander'", "era": "III", "read_scan": 349},
+    {"ce": "1320–1351", "ah": "720–751", "label": "The Tughlaqs; Muhammad bin Tughlaq the tyrant", "era": "III", "read_scan": 407},
+    {"ce": "1351–1388", "ah": "752–789", "label": "Firoz Shah Tughlaq, the great builder", "era": "III", "read_scan": 430},
+    {"ce": "1398", "ah": "800", "label": "Timur crosses the Sind — END of the first Volume", "era": "III", "read_scan": 458}
+  ]
+}
