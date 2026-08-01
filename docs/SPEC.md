@@ -113,10 +113,10 @@ through the vision model for the entire 22,104-book catalogue.
 ## 8. Roadmap/Phases
 
 - [x] Catalogue DB (level 1) — done
-- [ ] Render + pipeline tooling
-- [ ] Spec (this doc)
-- [ ] Transcribe Vol. I page-by-page (vision)
-- [ ] Plates preservation
-- [ ] Notable stories + comics
-- [ ] Static site + GitHub Pages
-- [ ] Review & polish pass
+- [x] Render + pipeline tooling
+- [x] Spec (this doc)
+- [x] Transcribe Vol. I page-by-page (vision) — 464/464 done
+- [x] Plates preservation — 3 plates (frontispiece, measures, fold-out map)
+- [x] Notable stories + comics — 6 stories
+- [x] Static site + GitHub Pages — live at chinmayjoshi.github.io/history-digitizer
+- [x] Review & polish pass
