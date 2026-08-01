@@ -376,13 +376,13 @@ section.block{padding:54px 0 8px}
   font-size:.92rem;position:relative}
 .bubble b{color:var(--ox)}
 .caption{margin-top:12px;font-size:.9rem;border-top:1px dashed var(--line);padding-top:8px;color:var(--ink2)}
-.panel.illustrated{border-radius:8px;overflow:hidden;padding:0;box-shadow:4px 4px 0 rgba(32,25,19,.22)}
+.panel.illustrated{border-radius:8px;overflow:hidden;padding:0;box-shadow:4px 4px 0 rgba(32,25,19,.22);
+  display:flex;flex-direction:column}
 .panel.illustrated .art{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
-.panel.illustrated .overlay{position:absolute;left:0;right:0;bottom:0;padding:34px 12px 12px;
-  background:linear-gradient(180deg,transparent 0%,rgba(22,15,8,.55) 30%,rgba(22,15,8,.86) 100%)}
-.panel.illustrated .bubble{margin:6px 0;font-size:.88rem}
+.panel.illustrated .txt{background:var(--paper);padding:12px 14px 12px;display:flex;flex-direction:column;gap:2px}
+.panel.illustrated .bubble{margin:4px 0;font-size:.88rem;background:#fdfaf0}
 .panel.illustrated .bubble b{color:var(--ox2)}
-.panel.illustrated .caption{margin-top:8px;color:#f4ecd9;font-size:.84rem;border-top:1px solid rgba(244,236,217,.35)}
+.panel.illustrated .caption{margin-top:8px;color:var(--ink2);font-size:.84rem;border-top:1px solid var(--line);padding-top:7px}
 .story-head .crumb{font-size:.82rem;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
 /* glossary */
 .gloss{columns:2;column-gap:40px}
@@ -705,8 +705,9 @@ def build_stories(site_dir, book, stories):
             scene = f'<div class="pscene">{html.escape(pn.get("scene",""))}</div>' if not os.path.exists(art) else ""
             if os.path.exists(art):
                 panels += f"""<div class="panel illustrated" id="p{i+1}">
-  {num}<img class="art" src="assets/comic/{html.escape(s['slug'])}_{i+1:02d}.jpg" alt="panel {i+1}" loading="lazy">
-  <div class="overlay">{bubbles}{caption}</div>
+  <span class="num">{i+1}</span>
+  <img class="art" src="assets/comic/{html.escape(s['slug'])}_{i+1:02d}.jpg" alt="panel {i+1}" loading="lazy">
+  <div class="txt">{bubbles}{caption}</div>
 </div>"""
             else:
                 panels += f"""<div class="panel" id="p{i+1}">{num}
