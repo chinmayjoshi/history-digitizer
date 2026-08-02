@@ -160,6 +160,14 @@ def transcribe_page(client_key: str, model: str, slug: str, book_title: str,
 
 
 def render_markdown(slug: str, idx: int, rec: dict) -> str:
+    # Normalize any residual long-s (U+017F) to plain 's'
+    def norm(v):
+        if isinstance(v, str):
+            return v.replace("\u017F", "s")
+        return v
+    rec = {k: (norm(v) if k != "annotations" else v) for k, v in rec.items()}
+    if rec.get("annotations"):
+        rec["annotations"] = [norm(a) for a in rec["annotations"]]
     def esc(v):
         return str(v).replace('"', '\\"') if v is not None else ""
     lines = ["---",
