@@ -1,0 +1,13 @@
+{
+  "name": "sea-voyage-1747",
+  "orn": {"about": "✧", "explore": "⚓", "timeline": "✦", "stories": "❦", "plates": "♁",
+          "people": "♛", "places": "♁", "glossary": "❧"},
+  "route": [
+    {"stop": "St. Helena", "scan": 28},
+    {"stop": "Java", "scan": 80},
+    {"stop": "Batavia", "scan": 100},
+    {"stop": "Madura", "scan": 126},
+    {"stop": "China", "scan": 155},
+    {"stop": "Canton", "scan": 236}
+  ]
+}

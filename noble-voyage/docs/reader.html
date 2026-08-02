@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reader — A Voyage to the East Indies: In 1747 and 1748</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/theme.css">
+</head><body>
+<nav class="site"><div class="wrap"><span class="brand">A Voyage to</span><a href="index.html">Home</a><a href="reader.html" class="active">Reader</a><a href="stories.html">Stories</a><a href="people.html">People</a><a href="places.html">Places</a><a href="plates.html">Plates</a><a href="glossary.html">Glossary</a></div></nav>
+
+<main><div class="wrap">
+<div class="reader-bar">
+  <button id="prev">← Prev</button><button id="next">Next →</button>
+  <select id="jump"></select><span class="pg" id="pglabel"></span>
+  <input type="search" id="search" placeholder="Search the whole book… (3+ chars)">
+</div>
+<div id="search-results" class="search-results"></div>
+<div class="panes">
+  <div class="pane scan"><h3>Original scan (1748)</h3><img id="scanimg" alt="scan"></div>
+  <div class="pane text"><h3><span>Transcription &amp; annotations</span><span class="era-tag" id="erae"></span></h3><div id="transcript"></div></div>
+</div>
+</div></main>
+<footer class="site"><div class="wrap">
+<span>A Voyage to the East Indies: In 1747 and 1748 · scanned edition 1748 · transcribed page-by-page by vision model (Digital Library of India)</span>
+<span><a href="https://github.com/chinmayjoshi/noble-voyage">View the source repository</a></span>
+</div></footer><script>
+let PAGES=[],IDX=0;
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+async function initReader(){
+  const res=await fetch('data/pages.json');const B=(await res.json());
+  PAGES=B.pages;
+  const q=new URLSearchParams(location.search);IDX=Math.min(Math.max(0,parseInt(q.get('p')||'0')),PAGES.length-1);
+  const sel=document.getElementById('jump');const grp={};
+  PAGES.forEach((pg,i)=>{const key=pg.era||'Front matter';
+    const o=document.createElement('option');o.value=i;o.dataset.grp=key;
+    o.textContent=(pg.p?('p.'+pg.p+' — '):'scan '+pg.n+' — ')+(pg.s||pg.k);
+    sel.appendChild(o)});
+  sel.addEventListener('change',()=>go(parseInt(sel.value)));
+  document.getElementById('prev').onclick=()=>go(IDX-1);
+  document.getElementById('next').onclick=()=>go(IDX+1);
+  document.getElementById('search').oninput=onSearch;
+  document.onkeydown=e=>{if(e.target.tagName==='INPUT')return;
+    if(e.key==='ArrowLeft')go(IDX-1);if(e.key==='ArrowRight')go(IDX+1)};
+  render();
+}
+function go(i){if(i<0||i>=PAGES.length)return;IDX=i;
+  history.replaceState(null,'','?p='+i);render();window.scrollTo({top:0,behavior:'smooth'})}
+function render(){
+  const pg=PAGES[IDX];
+  document.getElementById('jump').value=IDX;
+  document.getElementById('pglabel').textContent='scan '+(pg.n+1)+'/'+PAGES.length+(pg.p?(' · printed p.'+pg.p):'');
+  document.getElementById('prev').disabled=IDX===0;
+  document.getElementById('next').disabled=IDX===PAGES.length-1;
+  const img=document.getElementById('scanimg');
+  img.src='assets/pages/page_'+String(pg.n).padStart(4,'0')+'.jpg';
+  img.onclick=()=>window.open(img.src,'_blank');
+  let h=pg.t||'<p><em>No text on this page.</em></p>';
+  if(pg.platedesc)h+='<div class="annots"><b>Plate:</b> '+esc(pg.platedesc)+'</div>';
+  if(pg.an&&pg.an.length){h+='<div class="annots"><h3>Annotations</h3><ul>'+pg.an.map(a=>{
+    const m=a.match(/^\[(.+?)\]\s*(.*)$/);
+    return m?'<li><span class="tag">['+esc(m[1])+']</span> '+esc(m[2])+'</li>':'<li>'+esc(a)+'</li>'}).join('')+'</ul></div>'}
+  if(pg.notes)h+='<p class="pnote">Scan note: '+esc(pg.notes)+'</p>';
+  const et=document.getElementById('erae');
+  if(et)et.textContent=pg.era||'';
+  document.getElementById('transcript').innerHTML=h;
+}
+function stripTags(h){const d=document.createElement('div');d.innerHTML=h;return d.textContent}
+function onSearch(e){
+  const q=e.target.value.trim().toLowerCase();
+  const box=document.getElementById('search-results');
+  if(q.length<3){box.innerHTML='';return}
+  const hits=[];
+  PAGES.forEach((pg,i)=>{const txt=stripTags(pg.t||'').toLowerCase();
+    const at=txt.indexOf(q);if(at>=0)hits.push({i,pg,snip:txt.slice(Math.max(0,at-55),at+120)})});
+  box.innerHTML='<b>'+hits.length+' page(s) match</b>'+hits.slice(0,40).map(h=>
+    '<a href="?p='+h.i+'" onclick="go('+h.i+');return false"><span class="hit-n">'+
+    (h.pg.era||'Front')+' · '+(h.pg.p?('p.'+h.pg.p):'scan '+h.pg.n)+'</span> — …'+esc(h.snip)+'…</a>').join('');
+}
+
+initReader();</script></body></html>

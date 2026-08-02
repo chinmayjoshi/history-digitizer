@@ -1,0 +1,23 @@
+{
+  "slug": "prison-rock",
+  "title": "St. Helena, the Prison Rock",
+  "theme": "Tales of the Voyage",
+  "hook": "An 'impregnable' Atlantic rock, thick with rats, where a society of planters, soldiers and slaves keeps its own little scandals.",
+  "pages": "printed pp. 13–39 (scans 50–70)",
+  "figures": ["the Governor", "a young officer", "a young clergyman", "the slaves", "Noble"],
+  "summary": "St. Helena rode for centuries as an impregnable fortress-island mid-Atlantic, famed for being beyond the reach of enemies, robbers, wild beasts and rigorous seasons — 'much infested with rats and mice,' though abounding in fish, and the great watering-place of the India trade. Noble, stopping there on the voyage out, found a tiny human world worth gossiping about: a beloved Governor recalled through a complaint artfully laid by an ungrateful officer who had owed his fortune to him and then succeeded him; the 'melancholy affair' caused in an honest planter's family by the indiscretion of a young officer; and the 'no less criminal behaviour of a young clergyman.' Amid the planters and soldiers sat the slaves, and Noble gave his readers his reflections on seeing them a people 'so miserably subjected' to another — before recording the strange innocence of the islanders, who had no knowledge of thunder, lightning, or the smallpox, and their peculiar manner of salutation.",
+  "why": "A sparkling miniature of island life and 18th-century manners — and, in its note on the slaves and the 'ignorance of the inhabitants,' one of the book's little moral set-pieces, centuries before the island would be the prison of Napoleon.",
+  "panels": [
+    {"scene": "From the open sea, a towering black volcanic rock-island rising out of the Atlantic, cliffs sheer on every side.",
+     "dialogue": [], "caption": "Impregnable St. Helena—'danger neither of enemies nor robbers, nor wild beasts, nor rigorous seasons.'"},
+    {"scene": "The little settlement: a governor's house, planters' cottages, soldiers at drill, slaves at work.",
+     "dialogue": [], "caption": "A tiny society of planters, soldiers and slaves on a rock far from anywhere."},
+    {"scene": "A governor stepping ashore in disgrace, recalled by the Company; the man who betrayed him now taking his place.",
+     "dialogue": [], "caption": "An officer who owed his fortune to the Governor 'transmits a complaint'—and succeeds the man he ruined."},
+    {"scene": "A great house at night; a young officer's 'melancholy affair' troubling an honest planter's family.",
+     "dialogue": [], "caption": "Through the indiscretion of a young officer, a melancholy affair in the family of a reputable planter."},
+    {"scene": "Noble on the quay, looking on as slaves labour—his pen arrested, reflecting on 'one part of mankind being so miserably subjected to the other.'",
+     "dialogue": [{"speaker": "Noble", "text": "Strange that a people without thunder, lightning, or the smallpox should hold men in bondage."}],
+     "caption": "His reflections on seeing the slaves, and the islanders' strange innocence and manner of salutation."}
+  ]
+}

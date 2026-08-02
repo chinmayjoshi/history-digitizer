@@ -1,0 +1,14 @@
+[
+  {"num": "I", "title": "The Voyage Out", "subtitle": "England → St. Helena → Java",
+   "range_start": 28, "range_end": 80, "span": "1747",
+   "blurb": "The sea-journal: leaving England, a female volunteer found aboard, the customs at the Tropic and the Equator, and the lonely rock-island of St. Helena with its strange little society."},
+  {"num": "II", "title": "Java, Batavia & Madura", "subtitle": "The islands and the Dutch",
+   "range_start": 81, "range_end": 154, "span": "1747",
+   "blurb": "The Dutch emporium of Batavia, the island of Java, the 'Mutqueto' fly and the thief-catchers — and the heartbreaking dethronement of the King of Madura, delivered by the English to his enemies."},
+  {"num": "III", "title": "The Empire of China", "subtitle": "Pekin and the Middle Kingdom",
+   "range_start": 155, "range_end": 309, "span": "1747–48",
+   "blurb": "From the Straits to China: the emperor, his palace and throne, a land with no lawyers, its printing, laws, armies and the ceremonial reception of ambassadors."},
+  {"num": "IV", "title": "Canton & Its People", "subtitle": "The great trading port",
+   "range_start": 310, "range_end": 388, "span": "1748",
+   "blurb": "The shops and streets of Canton: fishes sold alive, rats and dogs in the markets, blind beggars, the rude rabble, the author's attempt to glimpse the Chinese ladies — and the comforts and curiosities of the English factory."}
+]

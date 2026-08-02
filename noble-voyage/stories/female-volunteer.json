@@ -1,0 +1,22 @@
+{
+  "slug": "female-volunteer",
+  "title": "The Female Volunteer — a Woman Aboard",
+  "theme": "Tales of the Voyage",
+  "hook": "Among the press of men scrambling onto the outward-bound Indiaman, one 'volunteer' turns out to be a woman.",
+  "pages": "printed pp. 1–12 (scans 28–40)",
+  "figures": ["the female volunteer", "the ship's company", "Noble"],
+  "summary": "Among the earliest pictures of the voyage, Noble records how a woman slipped aboard the ship during the chaos of manning her for sea — 'a female volunteer gets aboard, but discovered.' It is one of those small human incidents that the formal histories leave out: a woman surviving the press at the river and getting herself onto an East Indiaman bound for the other side of the world, only to be found out. Noble sets it beside the superstitions and customs of the passage — the old observances when the ship crossed the Tropic and the Equator, and the strange birds of the open ocean — a glimpse of life aboard before land falls out of sight.",
+  "why": "It is a tiny mystery at the start of the book that sticks in the memory — 18th-century ships were crowded, unruly worlds, and the press gangs at Gravesend let all manner of passengers slip through; a lone woman going to sea in secret is the kind of detail only a real diarist preserves.",
+  "panels": [
+    {"scene": "A Thames quay crowded with men, sailors, and departing passengers shoving toward the gangway of a great East Indiaman.",
+     "dialogue": [{"speaker": "Press-men", "text": "All hands aboard the India ship! Passage to China!"}],
+     "caption": "The scrum of taking in men for the East India voyage."},
+    {"scene": "In the crush a figure in borrowed seaman's clothes hurrying up the gangplank, hat low.",
+     "dialogue": [], "caption": "A female volunteer slips aboard amid the press — 'gets aboard, but discovered.'"},
+    {"scene": "Aboard, the captain and officers turning to stare at the caught-out passenger on the deck.",
+     "dialogue": [{"speaker": "Officer", "text": "What have we here, then?"}],
+     "caption": "Found out among the crew and passengers of the outward ship."},
+    {"scene": "The ship under sail at sea, a woman now one of the few aboard, the collected ship's company watching the strange crossing of the Tropic and the Equator with its old customs.",
+     "dialogue": [], "caption": "From that secret stowing aboard, into the common life of the voyage toward the Tropic line."}
+  ]
+}

@@ -32,23 +32,17 @@ except ImportError:  # pragma: no cover
 IMG_MAX_WIDTH = 1400
 IMG_QUALITY = 82
 
-ERAS = [
-    {"num": "I", "title": "The Ancients",
-     "subtitle": "The History of the Hindoos",
-     "range_start": 95, "range_end": 127,
-     "span": "Legend — c. 975",
-     "blurb": "The fabulous kings of Hindostan: the four ages of the world, the god-king Krishen who tamed elephants, and the dynasties before the first invader."},
-    {"num": "II", "title": "The Empire of Ghizni",
-     "subtitle": "The Ghaznavids",
-     "range_start": 128, "range_end": 257,
-     "span": "c. 962 – 1186",
-     "blurb": "From the slave Sabuktigin to Mahmud the idol-breaker, the Somnath raid, and Muhammad Ghori's last conquests in India."},
-    {"num": "III", "title": "The Empire of Delhi",
-     "subtitle": "The Delhi Sultanate",
-     "range_start": 258, "range_end": 458,
-     "span": "1192 – 1398",
-     "blurb": "The slave-sultans and their thrones — Razia, Balban, the Khaljis and the Tughlaqs — until a single capital tears itself apart on the eve of Timur's invasion."},
-]
+def default_eras() -> list[dict]:
+    return [{"num": "I", "title": "The Book", "subtitle": "Entire work",
+             "range_start": 0, "range_end": 10_000,
+             "span": "Full volume", "blurb": "The whole book."}]
+
+
+def load_eras(book_dir: str) -> list[dict]:
+    data = load_simple(os.path.join(book_dir, "eras.json"))
+    if data and isinstance(data, list) and data:
+        return data
+    return default_eras()
 
 THEME_ICONS = {
     "Origins & Legends": "✦",
@@ -56,6 +50,10 @@ THEME_ICONS = {
     "Battles & Raids": "⚔",
     "Rulers of Uncommon Fate": "♛",
     "The Decline": "⌛",
+    "Tales of the Voyage": "⚓",
+    "Drama & Tragedy": "♛",
+    "Peoples of the East": "♜",
+    "Curiosities & Customs": "❧",
 }
 
 COLOR_THEMES = {
@@ -64,6 +62,10 @@ COLOR_THEMES = {
     "Battles & Raids": "battles",
     "Rulers of Uncommon Fate": "rulers",
     "The Decline": "decline",
+    "Tales of the Voyage": "origins",
+    "Drama & Tragedy": "decline",
+    "Peoples of the East": "rulers",
+    "Curiosities & Customs": "battles",
 }
 
 
@@ -507,12 +509,12 @@ def page_html(title, nav_active, body, extra_js=""):
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title>
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css">{THEME_LINK}
 </head><body>
 <nav class="site"><div class="wrap"><span class="brand">{html.escape(book_brand)}</span>{links}</div></nav>
 {body}
 <footer class="site"><div class="wrap">
-<span>{html.escape(book_title)} · transcribed page-by-page by vision model from the 1768 scan (Digital Library of India)</span>
+<span>{html.escape(book_title)} · scanned edition {html.escape(book_year)} · transcribed page-by-page by vision model (Digital Library of India)</span>
 <span><a href="{book_repo}">View the source repository</a></span>
 </div></footer>{js}</body></html>"""
 
@@ -525,18 +527,19 @@ def build(book_dir, site_dir, work_dir, stories_dir):
     people = (load_simple(os.path.join(book_dir, "people.json")) or {}).get("people", [])
     places = (load_simple(os.path.join(book_dir, "places.json")) or {}).get("places", [])
     timeline = (load_simple(os.path.join(book_dir, "timeline.json")) or {}).get("events", [])
+    eras = load_eras(book_dir)
     chapters = extract_chapters(pages, os.path.join(work_dir, "transcripts"))
 
     # assign era to each page + chapter
     era_of = {}
-    for e in ERAS:
+    for e in eras:
         for n in range(e["range_start"], e["range_end"] + 1):
             era_of[n] = e["num"]
     for p in pages:
         p["era"] = era_of.get(p["n"], "")
     for c in chapters:
         c["era"] = era_of.get(c["n"], "")
-    chapters_by_era = {e["num"]: [] for e in ERAS}
+    chapters_by_era = {e["num"]: [] for e in eras}
     for c in chapters:
         chapters_by_era.setdefault(c["era"], []).append(c)
 
@@ -548,6 +551,17 @@ def build(book_dir, site_dir, work_dir, stories_dir):
         f.write(STYLE)
     export_images(pages, os.path.join(work_dir, "pages"), site_dir)
 
+    global THEME_LINK
+    theme = load_simple(os.path.join(book_dir, "theme.json")) or {}
+    THEME_LINK = ""
+    tcss = os.path.join(book_dir, "theme.css")
+    if theme and os.path.exists(tcss):
+        import shutil
+        shutil.copyfile(tcss, os.path.join(site_dir, "assets", "theme.css"))
+        THEME_LINK = '\n<link rel="stylesheet" href="assets/theme.css">'
+    globals()["BOOK_THEME_ORNS"] = theme.get("orn", {})
+    globals()["BOOK_THEME_ROUTE"] = theme.get("route", [])
+
     with open(os.path.join(site_dir, "data", "pages.json"), "w") as f:
         json.dump({"book": book["title"], "pages": pages}, f)
 
@@ -555,12 +569,14 @@ def build(book_dir, site_dir, work_dir, stories_dir):
     btitle = book.get("title", "History")
     bshort = " ".join(btitle.split()[:3])
 
-    global book_brand, book_title, book_repo
-    book_brand = "The History of Hindostan"
+    global book_brand, book_title, book_repo, book_year
+    book_brand = bshort
     book_title = btitle
-    book_repo = "https://github.com/chinmayjoshi/history-digitizer"
+    slug = os.path.basename(book_dir.rstrip("/"))
+    book_repo = "https://github.com/chinmayjoshi/" + slug
+    book_year = str(book.get("year_copyright") or book.get("year_issued") or "")
 
-    build_landing(site_dir, book, pages, chapters_by_era, stories, total_words, timeline)
+    build_landing(site_dir, book, pages, chapters_by_era, stories, total_words, timeline, eras)
     build_reader(site_dir, book, pages)
     build_stories(site_dir, book, stories)
     build_people(site_dir, book, pages, people, stories)
@@ -570,24 +586,37 @@ def build(book_dir, site_dir, work_dir, stories_dir):
     print(f"site written to {site_dir}/")
 
 
-def hero_body(site_dir, book, total_words, pages):
-    portrait = None
-    for n in (6, 7, 0):
-        if any(p["n"] == n for p in pages):
-            portrait = n
-            break
+def hero_body(book, pages):
+    portrait = next((p["n"] for p in pages if p["k"] == "title"), None)
+    if portrait is None:
+        for n in (0, 1, 2, 6, 7):
+            if any(p["n"] == n for p in pages):
+                portrait = n
+                break
     img = f"assets/pages/page_{portrait:04d}.jpg" if portrait is not None else ""
+
+    kicker = book.get("kicker", "A Digitized Rare Book")
+    bits = []
+    if book.get("author"):
+        bits.append(book["author"])
+    tr = book.get("translator")
+    if tr and tr != book.get("author"):
+        bits.append(f"{tr} (translator)")
+    if book.get("original_language"):
+        bits.append(f"from the {book['original_language']}")
+    byline = " · ".join(bits)
+
     return f"""
 <div class="hero">
  <div class="wrap">
   <div class="portrait-frame">
-    {f'<img class="portrait" src="{img}" alt="frontispiece">' if img else ''}
+    {f'<img class="portrait" src="{img}" alt="title page">' if img else ''}
   </div>
   <div>
-    <div class="kicker">A Digitized Manuscript · Vol. I of II · 1768</div>
+    <div class="kicker">{html.escape(kicker)}</div>
     <h1>{html.escape(book.get('title',''))}</h1>
     <p class="subtitle">{html.escape(book.get('subtitle',''))}</p>
-    <p class="byline">Alexander Dow, translator · from the Persian of Mahummud Casim Ferishta</p>
+    <p class="byline">{html.escape(byline)}</p>
     <p>
       <a class="btn" href="reader.html">Begin the reader →</a>
       <a class="btn ghost" href="stories.html">The notable stories</a>
@@ -597,15 +626,17 @@ def hero_body(site_dir, book, total_words, pages):
 </div>"""
 
 
-def stats_body(total_words, pages, stories):
+def stats_body(total_words, pages, stories, eras, book):
     plates = sum(1 for p in pages if p["plate"])
-    return """<div class="stats"><div class="wrap">
-  <div class="stat"><b>1768</b><span>published, London</span></div>
-  <div class="stat"><b>464</b><span>pages digitized</span></div>
-  <div class="stat"><b>3</b><span>eras of empire</span></div>
-  <div class="stat"><b>42</b><span>chapters</span></div>
-  <div class="stat"><b>8</b><span>notable stories</span></div>
-  <div class="stat"><b>""" + f"{total_words//1000}k" + """</b><span>words transcribed</span></div>
+    n_eras = len(eras)
+    year = book.get("year_copyright") or book.get("year_issued") or ""
+    return f"""<div class="stats"><div class="wrap">
+  <div class="stat"><b>{html.escape(str(year)) or '&ndash;'}</b><span>published</span></div>
+  <div class="stat"><b>{len(pages)}</b><span>pages digitized</span></div>
+  <div class="stat"><b>{n_eras}</b><span>{'part' if n_eras==1 else 'parts'}</span></div>
+  <div class="stat"><b>{max(len(s.get('panels',[])) for s in stories) if stories else 0}</b><span>story panels</span></div>
+  <div class="stat"><b>{len(stories)}</b><span>notable stories</span></div>
+  <div class="stat"><b>{total_words//1000}k</b><span>words transcribed</span></div>
 </div></div>"""
 
 
@@ -628,11 +659,15 @@ def era_card(e, chapters):
     ch = chapters.get(e["num"], [])
     start = ch[0]["n"] if ch else e["range_start"]
     img = f"assets/pages/page_{start:04d}.jpg"
-    chap_html = ""
-    for c in ch:
-        pg = f'<span class="pg">p.{c["title"].split()[-1]}</span>' if False else ""
-        chap_html += f'<a href="reader.html?p={c["n"]}">Sect. {c["section"]} — {html.escape(c["title"][:54])}</a>'
     num = e["num"]
+    if ch:
+        chap_html = "".join(
+            f'<a href="reader.html?p={c["n"]}">Sect. {c["section"]} — {html.escape(c["title"][:54])}</a>'
+            for c in ch)
+        extra = (f'<details class="chapter-list"><summary>{len(ch)} chapter'
+                 f'{"s" if len(ch)!=1 else ""} in this era</summary>{chap_html}</details>')
+    else:
+        extra = f'<p style="margin-top:6px"><a href="reader.html?p={start}" class="chapters">Read this leg →</a></p>'
     return f"""
 <div class="era">
   <div class="top"><img src="{img}" alt="era {num} opening">
@@ -641,15 +676,16 @@ def era_card(e, chapters):
     <div class="span">{html.escape(e['span'])}</div>
     <h3>{html.escape(e['title'])}</h3>
     <p>{html.escape(e['blurb'])}</p>
-    <details class="chapter-list"><summary>{len(ch)} chapters in this era</summary>{chap_html}</details>
+    {extra}
   </div>
 </div>"""
 
 
-def build_landing(site_dir, book, pages, chapters_by_era, stories, total_words, timeline=()):
-    hero = hero_body(site_dir, book, total_words, pages)
-    stats = stats_body(total_words, pages, stories)
-    eras = "".join(era_card(e, chapters_by_era) for e in ERAS)
+def build_landing(site_dir, book, pages, chapters_by_era, stories, total_words, timeline=(), eras=None):
+    eras_list = eras or default_eras()
+    hero = hero_body(book, pages)
+    stats = stats_body(total_words, pages, stories, eras_list, book)
+    eras = "".join(era_card(e, chapters_by_era) for e in eras_list)
     story_cards = landing_story_cards(stories)
     plates = [p for p in pages if p["plate"]][:3]
     plate_html = ""
@@ -667,23 +703,44 @@ def build_landing(site_dir, book, pages, chapters_by_era, stories, total_words, 
             f'<span class="tl-era">{html.escape(str(e.get("era","")))}</span></a>'
             for e in timeline)
         timeline_html = f'<div class="tl-scroll">{items}</div>'
+    default_summary = "A scanned historical book, transcribed page by page by a vision model and presented as a readable, searchable site."
+    closing = book.get("closing_hook", "")
+    hill = f'<div class="lead"><div class="cliff">{html.escape(closing)}</div></div>' if closing else ""
+    orns = BOOK_THEME_ORNS
+    route_html = ""
+    route = BOOK_THEME_ROUTE
+    if route:
+        stops = []
+        n = len(route)
+        for i, r in enumerate(route):
+            end = " end" if i == n - 1 else ""
+            stops.append(f'<a class="stop" href="reader.html?p={r.get("scan",0)}">'
+                         f'<span class="dot{end}"></span><b>{html.escape(r.get("stop",""))}</b>'
+                         f'<span class="scan">scan {r.get("scan","")}</span></a>')
+            if i < n - 1:
+                stops.append('<div class="leg gold"></div>' if i == n - 2 else '<div class="leg"></div>')
+        route_html = (f'<section class="block"><div class="section-head">'
+                      f'<span class="orn">{orns.get("explore","⚓")}</span><h2>The route</h2>'
+                      f'<p>Follow the ship from the Atlantic to Canton</p></div>'
+                      f'<div class="route">{"".join(stops)}</div></section>')
     body = f"""{hero}{stats}
 <main><div class="wrap">
+  {route_html}
   <section class="block">
-    <div class="section-head"><span class="orn">✧</span><h2>About this book</h2></div>
-    <p class="lead">{html.escape(book.get('summary', "A 1768 translation of Ferishta's great Persian history of Hindostan — from the earliest Hindu kings to the Delhi Sultanate on the eve of Timur, digitized page by page and read aloud by a vision model."))}</p>
-    <div class="lead"><div class="cliff">The volume closes on a held breath: \"to compleat the miseries of the unhappy city and empire, news arrived that Amir Timur had crossed the Sind, with an intention to conquer Hindostan. — END of the first Volume.\"</div></div>
+    <div class="section-head"><span class="orn">{orns.get("about","✧")}</span><h2>About this book</h2></div>
+    <p class="lead">{html.escape(book.get('summary', default_summary))}</p>
+    {hill}
   </section>
   <section class="block">
-    <div class="section-head"><span class="orn">✦</span><h2>The three eras</h2><p>Choose a thread through the book</p></div>
+    <div class="section-head"><span class="orn">{orns.get("explore","✦")}</span><h2>Explore the book</h2><p>Choose a thread or chapter to start reading</p></div>
     <div class="eras">{eras}</div>
   </section>
   <section class="block">
-    <div class="section-head"><span class="orn">◷</span><h2>Across the centuries</h2><p>A chronological spine · Hijri years as Firishta gives them</p></div>
+    <div class="section-head"><span class="orn">{orns.get("timeline","◷")}</span><h2>A timeline</h2><p>A chronological spine of the book</p></div>
     <div class="tl">{timeline_html}</div>
   </section>
   <section class="block">
-    <div class="section-head"><span class="orn">❦</span><h2>Notable stories</h2><p>The episodes that stopped us — retold with comic panels</p></div>
+    <div class="section-head"><span class="orn">{orns.get("stories","❦")}</span><h2>Notable stories</h2><p>The episodes that stopped us — retold with comic panels</p></div>
     <div class="story-grid">{story_cards}</div>
   </section>
   <section class="block">
@@ -696,7 +753,8 @@ def build_landing(site_dir, book, pages, chapters_by_era, stories, total_words, 
 
 
 def build_reader(site_dir, book, pages):
-    body = """
+    yr = book.get("year_copyright") or book.get("year_issued") or ""
+    body = f"""
 <main><div class="wrap">
 <div class="reader-bar">
   <button id="prev">← Prev</button><button id="next">Next →</button>
@@ -705,7 +763,7 @@ def build_reader(site_dir, book, pages):
 </div>
 <div id="search-results" class="search-results"></div>
 <div class="panes">
-  <div class="pane scan"><h3>Original scan (1768)</h3><img id="scanimg" alt="scan"></div>
+  <div class="pane scan"><h3>Original scan ({html.escape(str(yr))})</h3><img id="scanimg" alt="scan"></div>
   <div class="pane text"><h3><span>Transcription &amp; annotations</span><span class="era-tag" id="erae"></span></h3><div id="transcript"></div></div>
 </div>
 </div></main>"""
@@ -716,7 +774,9 @@ def build_reader(site_dir, book, pages):
 def build_stories(site_dir, book, stories):
     # group by theme, preserve canonical order
     themes = ["Origins & Legends", "Rise of Empires", "Battles & Raids",
-              "Rulers of Uncommon Fate", "The Decline"]
+              "Rulers of Uncommon Fate", "The Decline",
+              "Tales of the Voyage", "Drama & Tragedy",
+              "Peoples of the East", "Curiosities & Customs"]
     grouped = {}
     for s in stories:
         grouped.setdefault(s.get("theme", "Rise of Empires"), []).append(s)
@@ -743,7 +803,7 @@ def build_stories(site_dir, book, stories):
   <section class="block">
     <div class="section-head"><span class="orn">❦</span><h2>Notable stories</h2>
       <p>Standout episodes from the book, summarized and retold as lightweight vector comics</p></div>
-    <p class="lead" style="margin-bottom:20px">Eight moments worth stopping for — from the four ages of the world to the eve of Timur — arranged by the movement they embody.</p>
+    <p class="lead" style="margin-bottom:20px">{len(stories)} moments worth stopping for — retold with comic panels and arranged by the movement they embody.</p>
   </section>
   <section class="block">{''.join(sections)}</section>
 </div></main>"""
@@ -853,7 +913,7 @@ def build_places(site_dir, book, pages, places, stories):
   <section class="block">
     <div class="section-head"><span class="orn">♁</span><h2>The places of the book</h2>
       <p>Cities, frontiers, rivers and holy places on Firishta's stage</p></div>
-    <p class="lead">From Ghizni to Sumnat, the geography that shaped the history — with the modern settings of each.</p>
+    <p class="lead">The places where the story unfolds, with their modern settings.</p>
   </section>
   <section class="block"><div class="places">{''.join(cards)}</div></section>
 </div></main>"""

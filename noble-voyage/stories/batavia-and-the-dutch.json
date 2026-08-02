@@ -1,0 +1,24 @@
+{
+  "slug": "batavia-and-the-dutch",
+  "title": "Batavia, the Dutch Emporium",
+  "theme": "Peoples of the East",
+  "hook": "The richest trading city on earth, its canals and mint, its 'Mutqueto' fly and its ruthless thief-catchers.",
+  "pages": "printed pp. 73–93 (scans 81–125)",
+  "figures": ["the Governor of Batavia", "the Dutch", "Noble"],
+  "summary": "Batavia, 'the great emporium of the Dutch and of India,' astonished Noble as the richest city between the Cape and Canton — its canals, its mint striking dollars and rupees, the state and grandeur of its governor, and its situation and strength. But the city that made fortunes was also a place of climate and cruelty. Noble describes the torments of the 'Mutqueto' fly and the unhealthful air that wore down Europeans, and gives a cold little portrait of the 'Dutch thief-catchers': men who lay in wait for the Company's escaped soldiers and deserters, seizing on the miserable wretches and their ragged women to claim the reward — while, he reflects, one part of mankind stood 'so miserably subjected to the other.' Even the workmen gave him a curious observation: they confessed they could never bring their clock and watch-springs 'to a proper temper in hot countries.'",
+  "why": "Batavia was the engine-room of the world's first great corporate empire, and Noble renders it with a merchant's eye for its riches and a traveller's eye for its shadows — the fly, the climate, and the thief-catchers preying on the poor.",
+  "panels": [
+    {"scene": "A wide panorama of Batavia: canals criss-crossing a walled city of warehouses, ships in the road, an endless bazaar of the Indian trade.",
+     "dialogue": [], "caption": "'The great emporium of the Dutch and of India.'"},
+    {"scene": "A state reception: the Governor of Batavia in full magnificence, his court and guard around him.",
+     "dialogue": [], "caption": "The grandeur of its governor—a private company's chief who kept court like a sovereign."},
+    {"scene": "By a canal-side inn, Noble fanning himself against a cloud of biting flies, the unhealthful air of the low city hanging about him.",
+     "dialogue": [{"speaker": "Noble", "text": "The Mutqueto fly and the climate wear a man down."}],
+     "caption": "The torment of the Mutqueto fly and the sickly air of Batavia."},
+    {"scene": "An alley at dusk: 'thief-catchers' closing in on a ragged escaped soldier and his woman, reward-hungry.",
+     "dialogue": [], "caption": "The Dutch thief-catchers, who pounce on the Company's deserters for the bounty."},
+    {"scene": "The mint: heavy silver dollars and rupees rolling out, a workman shaking his head over a watch-spring.",
+     "dialogue": [{"speaker": "Workman", "text": "Springs will not be brought to a temper in hot countries."}],
+     "caption": "The Dutch mint—and reflections on how one part of mankind was 'so miserably subjected to the other.'"}
+  ]
+}

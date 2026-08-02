@@ -1,0 +1,22 @@
+rendered 4 text pages: [30, 55, 90, 130]
+generating gold (reference) transcriptions…
+  gold page 30: 1150 chars
+  gold page 55: 1192 chars
+  gold page 90: 1265 chars
+  gold page 130: 1207 chars
+transcribing with candidates…
+  google/gemini-2.5-flash-lite
+  google/gemini-3.1-flash-lite
+  google/gemini-2.5-flash
+  qwen/qwen3-vl-8b-instruct
+judging fidelity…
+    -> scored 8.8/10, $0.0003/page, ~$0.12 full-book
+    -> scored 9.0/10, $0.0007/page, ~$0.27 full-book
+    -> scored 9.2/10, $0.0014/page, ~$0.53 full-book
+    -> scored 6.8/10, $0.0002/page, ~$0.08 full-book
+
+===== RESULTS (avg fidelity 0-10, cost) =====
+    9.2/10    0.0014/page    0.53 full  google/gemini-2.5-flash
+    9.0/10    0.0007/page    0.27 full  google/gemini-3.1-flash-lite
+    8.8/10    0.0003/page    0.12 full  google/gemini-2.5-flash-lite
+    6.8/10    0.0002/page    0.08 full  qwen/qwen3-vl-8b-instruct

@@ -5,9 +5,12 @@ following docs/SPEC.md conventions.
 Resumable: pages with an existing transcript are skipped.
 
 Usage:
-    python3 tools/transcribe.py history-of-hindostan \
+    python3 tools/transcribe.py <book-dir-or-slug> \
         --pages-dir work/pages --out-dir work/transcripts \
-        [--model moonshotai/kimi-k3] [--workers 6] [--pages 0-20] [--limit 5]
+        [--model google/gemini-2.5-flash] [--workers 6] [--pages 0-20] [--limit 5]
+
+It reads the book title/context from <book>/book.json (falling back to the
+slug) and feeds it to the vision model so the prompt is book-agnostic.
 
 Auth: OPENROUTER_API_KEY env var, else falls back to the key stored in
 opencode's auth.json.
@@ -27,18 +30,18 @@ import urllib.request
 
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
-PROMPT = """You are transcribing one scanned page from the 1768 book
-"The History of Hindostan, from the Earliest Account of Time, to the Death of
-Akbar", Vol. I — Alexander Dow's translation of Ferishta's Persian history.
-Book slug: {slug}. Scan page index: {page}.
+PROMPT = """You are transcribing ONE scanned page VERBATIM from this book:
 
-Transcribe the page VERBATIM into English markdown:
-- The book uses the long s (ſ). Render it as a modern lowercase "s"
+Title: {book_title}
+About: {book_desc}
+
+Verbatim transcription rules:
+- The book uses the long s (ƒ). Render it as a modern lowercase "s"
   (e.g. "ſucceſs" -> "success"). Keep all other original spelling,
   capitalization, italics (mark with *...*), and punctuation.
 - Preserve paragraph breaks. Render chapter/section headings as markdown
-  headings (## / ###). Keep footnotes at the bottom, prefixed with the
-  original footnote marker.
+  headings (## / ### as appropriate). Keep footnotes at the bottom, prefixed
+  with the original footnote marker.
 - If there is a running header, include it as the first line prefixed
   with "[header] ". If a catchword appears at the bottom right, include it
   as "[catchword] X". Record the printed page number if visible.
@@ -55,6 +58,18 @@ Then respond with STRICT JSON only (no markdown fences), with this schema:
   "annotations": ["<0-5 short notes; tag each [archaic]/[place]/[person]/[date]/[fact]/[context]/[correction]>"],
   "notes": "<legibility/scan issues, or null>"
 }}"""
+
+
+def load_book_context(slug_or_dir: str) -> tuple[str, str]:
+    """Return (title, description) for the book, reading book.json if the
+    argument is a directory, else using the slug as the title."""
+    if os.path.isdir(slug_or_dir):
+        bj = os.path.join(slug_or_dir, "book.json")
+        if os.path.exists(bj):
+            with open(bj) as f:
+                b = json.load(f)
+            return b.get("title", slug_or_dir), (b.get("subtitle") or b.get("summary") or "")[:400]
+    return slug_or_dir, ""
 
 
 def get_api_key() -> str:
@@ -86,8 +101,9 @@ def page_indices(pages_dir: str, pages_arg: str | None, limit: int | None) -> li
     return found
 
 
-def transcribe_page(client_key: str, model: str, slug: str, pages_dir: str,
-                    out_dir: str, idx: int, attempts: int = 4) -> tuple[int, bool, str]:
+def transcribe_page(client_key: str, model: str, slug: str, book_title: str,
+                    book_desc: str, pages_dir: str, out_dir: str, idx: int,
+                    attempts: int = 4) -> tuple[int, bool, str]:
     out_path = os.path.join(out_dir, f"page_{idx:04d}.md")
     if os.path.exists(out_path):
         return idx, True, "cached"
@@ -105,7 +121,7 @@ def transcribe_page(client_key: str, model: str, slug: str, pages_dir: str,
         "messages": [{
             "role": "user",
             "content": [
-                {"type": "text", "text": PROMPT.format(slug=slug, page=idx)},
+                {"type": "text", "text": PROMPT.format(book_title=book_title, book_desc=book_desc)},
                 {"type": "image_url", "image_url": {"url": f"data:{mime};base64,{b64}"}},
             ],
         }],
@@ -168,30 +184,34 @@ def render_markdown(slug: str, idx: int, rec: dict) -> str:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("slug")
-    ap.add_argument("--pages-dir", default="work/pages")
-    ap.add_argument("--out-dir", default="work/transcripts")
-    ap.add_argument("--model", default="moonshotai/kimi-k3")
+    ap.add_argument("book_dir")
+    ap.add_argument("--pages-dir", default=None)
+    ap.add_argument("--out-dir", default=None)
+    ap.add_argument("--model", default="google/gemini-2.5-flash")
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--pages", default=None)
     ap.add_argument("--limit", type=int, default=None)
     args = ap.parse_args()
 
-    os.makedirs(args.out_dir, exist_ok=True)
+    title, desc = load_book_context(args.book_dir)
+    base_dir = args.book_dir if os.path.isdir(args.book_dir) else "."
+    pages_dir = args.pages_dir or os.path.join(base_dir, "work", "pages")
+    out_dir = args.out_dir or os.path.join(base_dir, "work", "transcripts")
+    os.makedirs(out_dir, exist_ok=True)
     key = get_api_key()
-    indices = page_indices(args.pages_dir, args.pages, args.limit)
+    indices = page_indices(pages_dir, args.pages, args.limit)
     todo = [i for i in indices
-            if not os.path.exists(os.path.join(args.out_dir, f"page_{i:04d}.md"))]
+            if not os.path.exists(os.path.join(out_dir, f"page_{i:04d}.md"))]
     print(f"{len(indices)} pages selected, {len(todo)} to transcribe "
-          f"({len(indices) - len(todo)} cached)", flush=True)
+          f"({len(indices) - len(todo)} cached) for {title}", flush=True)
     if not todo:
         return
 
     done = failed = 0
     t0 = time.time()
     with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:
-        futs = {ex.submit(transcribe_page, key, args.model, args.slug,
-                          args.pages_dir, args.out_dir, i): i for i in todo}
+        futs = {ex.submit(transcribe_page, key, args.model, os.path.basename(args.book_dir.rstrip("/")),
+                          title, desc, pages_dir, out_dir, i): i for i in todo}
         for fut in cf.as_completed(futs):
             idx, ok, msg = fut.result()
             if ok:

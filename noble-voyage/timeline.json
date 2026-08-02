@@ -1,0 +1,17 @@
+{
+  "intro": "The progress of the voyage, leg by leg, in the order Noble tells it.",
+  "events": [
+    {"ce": "1747", "label": "Departure from England; the press of men at the river", "era": "I", "read_scan": 28},
+    {"ce": "1747", "label": "A female volunteer is discovered aboard", "era": "I", "read_scan": 40},
+    {"ce": "1747", "label": "Customs at sea on passing the Tropic and the Equator", "era": "I", "read_scan": 44},
+    {"ce": "1747", "label": "Arrival at St. Helena; the island described", "era": "I", "read_scan": 50},
+    {"ce": "1747", "label": "Departure from St. Helena; voyage toward Java", "era": "I", "read_scan": 60},
+    {"ce": "1747", "label": "The Straits of Sunda; the road of Batavia", "era": "II", "read_scan": 81},
+    {"ce": "1747", "label": "An account of the island of Java", "era": "II", "read_scan": 100},
+    {"ce": "1747", "label": "The dethroned King of Madura delivered to the Dutch", "era": "II", "read_scan": 126},
+    {"ce": "1747–48", "label": "The voyage to China; account of the Empire of China", "era": "III", "read_scan": 155},
+    {"ce": "1748", "label": "Account of Pekin; the emperor's palace and throne", "era": "III", "read_scan": 158},
+    {"ce": "1748", "label": "Account of Canton and the English factory", "era": "IV", "read_scan": 236},
+    {"ce": "1748", "label": "The markets and streets of Canton; an attempt to see the Chinese ladies", "era": "IV", "read_scan": 300}
+  ]
+}

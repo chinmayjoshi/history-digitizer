@@ -1,0 +1,31 @@
+{
+  "slug": "king-of-madura",
+  "title": "The Dethroned King of Madura — 'What Is Pity Without Assistance?'",
+  "theme": "Drama & Tragedy",
+  "hook": "A deposed island king throws himself on an English ship for protection — and is 'tragically delivered' back to his enemies.",
+  "pages": "printed pp. 94–112 (scans 126–141)",
+  "figures": ["The King of Madura", "Captain Congreve", "The Sultan of Benjar", "the Dutch", "the English crew"],
+  "summary": "When the Dutch of Batavia dethroned the King of Madura, the island-king fled his punishment and escaped the pursuers sent to destroy or enslave him. He found his way to the shore beneath the English Indiaman the Onslow, and 'in the most moving manner' represented his case to the boatswain, begging to be carried to Captain Congreve. Congreve received him, and the king, his young prince and the women of his family came aboard under English protection. But at break of day the Dutch armed vessel discovered the Madurian prows alongside the Onslow — and saw at once that the English had sheltered the men they had come to take. Noble calls what followed 'one of the most melancholy scenes that, perhaps, has ever been acted in the east, in which is exhibited an instance of Dutch insolence and barbarity on one part, and of English pusillanimity and misconduct on the other.' The Dutch demanded the king; the English crew, moved to pity, were at first willing to shelter him while the sailors armed themselves. The king saw his ruin plain; the people wept and protested their sorrow. He answered them: 'I can plainly see that you pity my misfortunes; but what is pity without assistance? Your pity, when you refuse your aid, but heightens my grief.' At last they were obliged to give him up. The young prince and the women were too sunk and confounded to speak a word as they were taken from the ship — and for many days the crew scarce spoke to one another, 'and, I believe, it made several of the common men serious, who had never been so before.'",
+  "why": "It is the moral heart of the book: a breathlessly told true story of one small king abandoned at sea, and Noble's own blunt verdict naming both Dutch cruelty and English cowardice — an unusually candid piece of 18th-century colonial self-criticism.",
+  "panels": [
+    {"scene": "A tropical island at dawn: Dutch ships offshore, a dethroned king and his family fleeing the shore as pursuers draw near.",
+     "dialogue": [], "caption": "The Dutch of Batavia depose the King of Madura and send vessels 'to destroy or enslave' him and his line."},
+    {"scene": "The English Indiaman Onslow riding at anchor near the coast; on the shore below, a lone king hailing the longboat.",
+     "dialogue": [{"speaker": "The King", "text": "In the most moving manner I represent my case — carry me to the Captain!"}],
+     "caption": "The fugitive king begs the boatswain, and next day the boatswain carries his plea up-river to Captain Congreve."},
+    {"scene": "The captain's great cabin as the king, his son and the women of the family are given shelter.",
+     "dialogue": [], "caption": "Congreve takes the dethroned family aboard the Onslow, under English protection."},
+    {"scene": "Breaking dawn: a Dutch armed vessel sliding alongside, its crew staring at the Madurian prows tied to the English ship.",
+     "dialogue": [{"speaker": "The Dutch", "text": "So — the English shelter our fugitives."}],
+     "caption": "'Neglecting to sink the prows' the instant they were unloaded gives the Dutch their excuse."},
+    {"scene": "Turmoil on the Onslow's deck: the Dutch demanding surrender, sailors arming themselves, the crew refusing to give the king up.",
+     "dialogue": [], "caption": "'One of the most melancholy scenes ever acted in the East — Dutch insolence and barbarity, English pusillanimity and misconduct.'"},
+    {"scene": "The king seated in the great cabin, his troubled breast; around him the weeping crew.",
+     "dialogue": [{"speaker": "The King", "text": "I can plainly see you pity me — but what is pity without assistance? Your pity, when you refuse your aid, but heightens my grief."}],
+     "caption": "His speech stops the ship. Yet they are 'obliged' to give him up."},
+    {"scene": "A longboat bearing the king, the young prince and the silent women pulling away toward the Dutch ship.",
+     "dialogue": [], "caption": "'The young Prince and the women were too much sunk and confounded to utter one word.'"},
+    {"scene": "The Onslow's rail in the days after: men staring at the sea, not speaking to one another.",
+     "dialogue": [], "caption": "'For many days after, the whole ship's company were so sunk with concern that they scarce spoke a word — and it made several of the common men serious, who had never been so before.'"}
+  ]
+}

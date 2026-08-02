@@ -1,0 +1,33 @@
+{
+  "intro": "The real people Noble met on his voyage — shipmates, governors, a dispossessed king, and the potentates of China. 'Read' is where each appears in the reader; 'Editor's note' adds context the 1748 book leaves out.",
+  "people": [
+    {"name": "Charles Frederick Noble", "book_name": "the Author", "role": "Author; officer in the East India Company's service", "dates": "fl. 1747–48",
+     "book": "The preface promises the 'genuine production of a real traveller, an officer in the service of the East India Company… an accurate observer, who describes chiefly what he has seen.'",
+     "note": "Beyond this one journey little is recorded of Noble himself — the book is almost all we know. 'Captain Charles Frederick Noble' appears on the title page; his promised value lies in being, as he stresses, an eyewitness rather than an armchair compiler.",
+     "read_scan": 8, "stories": ["female-volunteer", "king-of-madura"]},
+    {"name": "The King of Madura", "book_name": "the dethroned King", "role": "Dethroned monarch of the island of Madura", "dates": "dethroned c. 1747",
+     "book": "Fled his own island when the Dutch deposed him, escaped their pursuers, and threw himself on the protection of the English ship Onslow — only to be 'tragically delivered' back to the Dutch amid a scene Noble calls one of the most melancholy ever acted in the East.",
+     "note": "Madura, off the north coast of Java, had long been a vassal of the Dutch East India Company (VOC). Noble's account — of a king pleading for help and the crew weeping as he was led away — is a striking contemporary indictment of both Dutch 'insolence and barbarity' and 'English pusillanimity and misconduct.'",
+     "read_scan": 126, "stories": ["king-of-madura"]},
+    {"name": "Captain Congreve", "book_name": "Capt. Congreve", "role": "Commander of the English ship 'Onslow'", "dates": "1747",
+     "book": "The English captain who first sheltered the fleeing King of Madura, was imprisoned by the Sultan of Benjar, and was ultimately powerless when the Dutch demanded the king's surrender.",
+     "note": "The 'Onslow' was an East Indiaman (an English Company trading ship). Noble's account shows how thin English protection could be in the waters the Dutch Company dominated — even a captain could end up in a native sultan's prison.",
+     "read_scan": 128, "stories": ["king-of-madura"]},
+    {"name": "The Sultan of Benjar", "book_name": "the sultan of Benjar", "role": "Ruler on Borneo who imprisoned Capt. Congreve", "dates": "1747",
+     "book": "The sovereign to whom the trading port of Benjar belonged, who clapped the English captain in prison — a glimpse of the perils of Company commerce far from any European fleet.",
+     "note": "Benjar is Banjarmasin, on the south coast of Borneo — a pepper port contested between Dutch and English traders in the 18th century.",
+     "read_scan": 130, "stories": ["king-of-madura"]},
+    {"name": "The Female Volunteer", "book_name": "a female volunteer", "role": "A woman who slipped aboard ship", "dates": "1747",
+     "book": "'A Female volunteer gets aboard, but discovered' — one of the book's earliest and most human curiosities, a woman managing to reach the outward-bound vessel during the press at Gravesend.",
+     "note": "The Thames 'press' of men for outward East-Indiamen was unruly, and the occasional woman did manage to smuggle herself aboard. Noble's passing mention is a small gem of social history.",
+     "read_scan": 40, "stories": ["female-volunteer"]},
+    {"name": "The Emperor of China", "book_name": "the Emperor", "role": "Sovereign of the Empire of China", "dates": "reigned 1735–1796",
+     "book": "Noble describes the emperor's title, his palace and throne at Pekin, his person and dress, and the ceremonial manner of receiving ambassadors.",
+     "note": "In 1747–48 the Dragon Throne was held by the Qianlong Emperor — one of the longest-reigning and most powerful monarchs in world history, who received no embassy from the English until 1793. Noble's account reflects what a merchant saw of that grand and distant court.",
+     "read_scan": 158, "stories": ["empire-of-china"]},
+    {"name": "The Governor of Batavia", "book_name": "the Dutch governor", "role": "Chief magistrate of the Dutch capital at Batavia", "dates": "1747",
+     "book": "Noble dwells on 'the grandeur of its governor,' the state and ceremony with which the head of the Dutch settlement at Batavia kept court.",
+     "note": "The Governor-General of the Dutch East Indies ruled from Batavia (modern Jakarta) what was arguably the richest corporation-state on earth — a private company with fleets, armies and provinces.",
+     "read_scan": 90, "stories": ["batavia-and-the-dutch"]}
+  ]
+}

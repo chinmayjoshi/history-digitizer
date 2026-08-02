@@ -1,0 +1,25 @@
+{
+  "slug": "empire-of-china",
+  "title": "The Empire of China — No Lawyers and an Unseen Emperor",
+  "theme": "Peoples of the East",
+  "hook": "A vast empire where lawyers are forbidden, printing is ancient, and the emperor rules from a throne few have ever laid eyes on.",
+  "pages": "printed pp. 113–~185 (scans 145–232)",
+  "figures": ["The Emperor of China", "the Mandarins", "Noble"],
+  "summary": "From the ships' roads of the Indies Noble turns his attention to the mightiest state on earth: the Empire of China. He relates the emperor's august title, the government and the laws of the country — laws so simple in their execution, he reports, that lawyers are not allowed to practice and no such profession encumbers the people. He describes a land that has known printing from time beyond memory, its military force, and above all the fabled centre of its power: Pekin, and the emperor's palace and throne, with a description of his person and dress and the solemn manner of receiving ambassadors. Rounding off, Noble gives 'a short account of Tartary' — the vast steppe north of the Great Wall, home of the very Manchu people who now occupied the Dragon Throne. Seen through a European merchant's eyes in 1748, China appears orderly, ancient and self-contained: a civilization that needed no lawyers and showed itself to strangers through ceremony rather than intimacy.",
+  "why": "For an 18th-century European, China was the supreme marvel of the age — and Noble's account (with its striking claim that the Chinese govern without lawyers) captures both what traders actually knew and what they romanticized, at the very moment the China trade was about to shape the world economy.",
+  "panels": [
+    {"scene": "A view from the deck: the junks and coast of China appearing over the horizon as the ship nears the Celestial Empire.",
+     "dialogue": [], "caption": "At length the voyage reaches the Empire of China."},
+    {"scene": "A Mandarin's office of justice: a magistrate hearing a case with a clerk, no bars, no wigged lawyers in sight.",
+     "dialogue": [{"speaker": "Noble", "text": "In this whole empire, they say, no lawyers are allowed."}],
+     "caption": "Government and laws so simple, it is said, that the profession of the lawyer is forbidden."},
+    {"scene": "A scholar's shop with a wooden press and stacked printed books, older than any in Europe.",
+     "dialogue": [], "caption": "A land acquainted with printing from the remotest antiquity."},
+    {"scene": "Pekin: the vast walled Forbidden City with its roofs rippling toward the palace heights.",
+     "dialogue": [], "caption": "Pekin—and at its heart the emperor's palace, where the sovereign is rarely seen."},
+    {"scene": "A grand audience hall: ambassadors in rich robes advancing with ceremony toward a distant, half-hidden throne and its seated figure.",
+     "dialogue": [], "caption": "The manner of receiving ambassadors—the emperor's person, dress and throne described from afar."},
+    {"scene": "Beyond the Great Wall, endless grasslands of Tartary under a wide sky.",
+     "dialogue": [], "caption": "'A short account of Tartary'—the steppe of the very Manchus who now sit the Dragon Throne."}
+  ]
+}

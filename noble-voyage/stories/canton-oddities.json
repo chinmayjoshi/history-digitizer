@@ -1,0 +1,27 @@
+{
+  "slug": "canton-oddities",
+  "title": "Canton Oddities — Rats for Supper and an English Sailor's Adventure",
+  "theme": "Curiosities & Customs",
+  "hook": "Fishes sold alive, dogs and rats in the markets, blind beggars, and an author's doomed attempt to glimpse the Chinese ladies.",
+  "pages": "printed pp. ~200–230 (scans 236–330)",
+  "figures": ["Noble", "the Chinese of Canton", "an English sailor", "the Chief Mandarine"],
+  "summary": "Canton was the single port where the whole China trade came ashore, and Noble wanders its streets with a collector's eye for the strange and the human. Here fishes are sold alive from tubs; dogs, cats and rats are openly exhibited and bought 'as common food'; the Chinese cookery, with its cowlies hawking victuals about the streets, is a wonder by itself. Multitudes of blind beggars crowd the ways, and the rabble is famously rude to strangers. The author makes his own quixotic attempt 'to get a sight of the Chinese ladies' — and is thwarted by the strict etiquette that keeps them from foreigners. There is a 'comical adventure of an English sailor,' the great state of a chief Mandarine parading with an escort, and, for Noble himself, the strange delight of the operation that he calls 'shampoeing' at the English factory. Canton, in his pages, is teeming, exotic, alarming and endlessly entertaining — the market of a civilization just out of reach.",
+  "why": "This is where the book turns from travelogue into a museum of 18th-century astonishment — the detail of a world (fishes alive, rats sold, ladies unseen, a sailor's caper) that a later, more knowing age could never have recorded with such fresh delight.",
+  "panels": [
+    {"scene": "A brimming Canton street-market: tubs of fish still lashing, vendors crying, the press of a busy port.",
+     "dialogue": [{"speaker": "Vendor", "text": "Fresh fish — living fish, out of the water!"}],
+     "caption": "Fishes sold alive in the public markets of Canton."},
+    {"scene": "A stall where caged dogs, cats and rats are shown for sale before curious onlookers.",
+     "dialogue": [], "caption": "Dogs, cats and rats 'common food, and publickly sold'—with the wonders of Chinese cookery."},
+    {"scene": "A laden cowlie-porter pushing through the street, selling cooked victuals; blind beggars at the kerb as the rabble jostles a stranger.",
+     "dialogue": [], "caption": "Cowlies selling victuals, multitudes of blind beggars, and a rabble 'very rude to strangers.'"},
+    {"scene": "Noble peering from a lane toward a terrace screened from foreigners, seeking a glimpse of the forbidden ladies; a door slamming.",
+     "dialogue": [{"speaker": "Noble", "text": "The ladies of China—just out of sight."}],
+     "caption": "The author's attempt to get a sight of the Chinese ladies, and his rebuff."},
+    {"scene": "An English sailor mid-caper in a Canton street, having a comical adventure to the amusement of the crowd.",
+     "dialogue": [], "caption": "The comical adventure of an English sailor in Canton."},
+    {"scene": "Inside the English factory: a calm room where an attendant works the author's limbs, Noble sighing with relief at being 'shampoed.'",
+     "dialogue": [{"speaker": "Noble", "text": "A strange and grateful operation—shampoeing."}],
+     "caption": "The author undergoes the operation of shampoeing within the factory—and the great state of a chief Mandarine."}
+  ]
+}

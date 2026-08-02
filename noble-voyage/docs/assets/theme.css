@@ -1,0 +1,52 @@
+/* Sea-voyage / nautical-chart theme for Noble's 1747-48 Voyage to the East Indies */
+:root{
+  --ink:#173a4a; --ink2:#0d2a3a; --parch:#eef1e9; --parch2:#dde8e2;
+  --paper:#f9f7f0; --ox:#11607a; --ox2:#2a8ca6; --gold:#c3923f; --gold2:#d8b46d;
+  --olive:#1f7a6a; --line:#b9cfc9; --muted:#5b6f6a;
+}
+body{background:
+  radial-gradient(1100px 520px at 78% -8%, rgba(42,140,166,.14), transparent 60%),
+  repeating-linear-gradient(0deg, transparent 0 46px, rgba(23,58,74,.035) 46px 47px),
+  var(--parch)}
+nav.site{background:var(--ink2)}
+nav.site .brand{color:var(--gold2)}
+nav.site a.active{color:#fff;border-bottom-color:#2a9d8f;box-shadow:inset 0 -2px 0 #2a9d8f}
+.hero{background:
+  radial-gradient(700px 400px at 85% 20%, rgba(216,180,109,.14), transparent 60%),
+  linear-gradient(160deg,#092030 0%,#0d2a3a 55%,#173f52 100%);
+  border-bottom:5px solid #2a9d8f}
+.hero .kicker{color:var(--gold2)}
+.hero .portrait-frame::before{border-color:rgba(86,160,178,.55)}
+.hero .portrait-frame::after{border-color:rgba(86,160,178,.28)}
+.stats{background:#0a2332}
+.stat b{color:var(--gold2)}
+.section-head .orn{color:var(--ox2)}
+.btn{background:var(--ox2);box-shadow:0 3px 0 #14584f}
+.btn:hover{background:#38b7a6}
+.btn.ghost{border-color:var(--gold2);color:var(--gold2)}
+.card,.story,.era,.pane,.panel,.tl-item,.gallery figure{border-color:var(--line)}
+.era{border-top:4px solid var(--ox2)}
+.era .num{background:var(--ox)}
+.era .span,.story .meta,.tl-year,.person .role,.place .role{color:var(--ox)}
+.tl-item{border-top:3px solid #2a9d8f}
+.tl-era{background:var(--olive)}
+.story{border-top:4px solid var(--olive)}
+.story.theme-decline,.story.theme-battles{border-top-color:var(--ox2)}
+.story.theme-origins,.story.theme-rulers{border-top-color:var(--gold)}
+.person .ednote,.place .ednote{border-left-color:var(--ox2);background:#eaf1ec}
+.gloss .g h3{color:var(--ox)}
+.reader-bar select:focus,.reader-bar input:focus{outline-color:var(--ox2)}
+footer.site a,.gloss ul a{color:var(--ox)}
+
+/* ---- captain's-log route strip ---- */
+.route{display:flex;align-items:center;gap:0;overflow-x:auto;padding:6px 2px 10px;margin-top:4px}
+.route .stop{flex:0 0 auto;text-align:center;padding:0 10px;min-width:96px}
+.route .stop b{display:block;font-weight:normal;font-size:.95rem;letter-spacing:.02em;color:var(--ink)}
+.route .stop .scan{font-size:.72rem;color:var(--ox);font-variant:small-caps;letter-spacing:.08em}
+.route .dot{width:15px;height:15px;border-radius:50%;background:#2a9d8f;border:2px solid var(--paper);
+  margin:0 auto 6px;box-shadow:0 0 0 2px #2a9d8f;transition:transform .15s ease}
+.route a:hover .dot{transform:scale(1.25);background:#38b7a6;box-shadow:0 0 0 2px #38b7a6}
+.route .dot.end{background:var(--gold2);box-shadow:0 0 0 2px var(--gold2)}
+.route .leg{flex:1 0 26px;height:3px;min-width:26px;
+  background:repeating-linear-gradient(90deg,#2a9d8f 0 7px,transparent 7px 13px)}
+.route .leg.gold{background:repeating-linear-gradient(90deg,var(--gold) 0 7px,transparent 7px 13px)}

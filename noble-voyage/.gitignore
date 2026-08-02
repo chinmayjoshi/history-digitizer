@@ -1,0 +1,6 @@
+input/
+work/
+cache/
+*.pdf
+.DS_Store
+__pycache__/
